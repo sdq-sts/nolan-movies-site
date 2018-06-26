@@ -10,7 +10,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.1.0/css/all.css' }
     ]
   },
   /*
@@ -20,6 +21,15 @@ module.exports = {
   /*
   ** Build configuration
   */
+
+  // Global CSS
+  css: [
+    { src: '~/assets/fonts/Bellefair/Bellefair.css' }
+  ],
+
+  // Modules
+  modules: [],
+
   build: {
     /*
     ** Run ESLint on save

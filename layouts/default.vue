@@ -1,8 +1,20 @@
 <template>
   <div>
+    <TheHeader
+      :title="['The', 'Dream is', 'Real.']"
+      :subtitle="['The', 'Dream is', 'Real.']"
+    />
     <nuxt/>
   </div>
 </template>
+
+<script>
+import TheHeader from '~/components/Base/TheHeader'
+
+export default {
+  components: { TheHeader }
+}
+</script>
 
 <style>
 html {
@@ -13,6 +25,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: #181818;
 }
 
 *, *:before, *:after {
