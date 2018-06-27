@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "test": "npm run test:unit -- npm run test:2e2",
-    "test:unit": "TEST=unit ava ./test/specs/*.spec.js --verbose",
+    "test:unit": "TEST=unit ava ./test/specs/*.spec.js --verbose --watch",
     "test:e2e": "TEST=e2e ava ./test/e2e/*.spec.js --verbose",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -29,6 +29,7 @@
     "eslint-plugin-vue": "^4.0.0",
     "jsdom": "^11.11.0",
     "node-sass": "^4.9.0",
+    "nuxt-sass-resources-loader": "^2.0.2",
     "require-extension-hooks": "^0.3.2",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^1.0.1",

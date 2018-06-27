@@ -29,7 +29,18 @@ module.exports = {
   ],
 
   // Modules
-  modules: [],
+  modules: [
+    ['nuxt-sass-resources-loader', '@/assets/variables.scss'],
+  ],
+
+  // Render
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
 
   build: {
     /*
