@@ -57,6 +57,7 @@ html {
   }
 
   &__social-icons {
+    width: calc(var(--site-width) / 2);
     margin-left: calc((100% - var(--site-width)) / 2);
   }
 }
