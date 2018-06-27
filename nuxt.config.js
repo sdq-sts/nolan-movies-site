@@ -24,7 +24,8 @@ module.exports = {
 
   // Global CSS
   css: [
-    { src: '~/assets/fonts/Bellefair/Bellefair.css' }
+    { src: '~/assets/fonts/Bellefair/Bellefair.css' },
+    { src: '~/assets/fonts/Barlow/Barlow.css' }
   ],
 
   // Modules
