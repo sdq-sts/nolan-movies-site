@@ -1,5 +1,9 @@
 <template>
   <div class="site-header">
+    <h2 class="site-header__subtitle">
+      <span v-for="(word, i) in theSubtitle" :key="i">{{ word }}<br/></span>
+    </h2>
+
     <header class="header">
       <h1 class="header__title">
         <span v-for="(word, i) in theTitle" :key="i">{{ word }}<br/></span>
@@ -7,10 +11,6 @@
 
       <MenuIcon class="header__menu-icon"/>
     </header>
-
-    <h2 class="site-header__subtitle">
-      <span v-for="(word, i) in theSubtitle" :key="i">{{ word }}<br/></span>
-    </h2>
   </div>
 </template>
 
@@ -38,14 +38,11 @@ export default {
     }
   },
 
-  components: {
-    MenuIcon
-  }
+  components: { MenuIcon }
 }
 </script>
 
 <style lang="scss">
-$site-width: 80%;
 $white: #fff;
 $darkGrey: #121212;
 
@@ -65,8 +62,7 @@ $darkGrey: #121212;
 }
 
 .header {
-  width: $site-width;
-  margin: 6em auto;
+  width: 100%;
   position: relative;
 
   &__title {
