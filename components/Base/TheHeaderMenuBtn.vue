@@ -25,7 +25,7 @@ $gray: #ccc;
   &__first-line,
   &__second-line,
   &__third-line {
-    height: 1px;
+    height: 0.05em;
     background: $gray;
     width: 100%;
   }
