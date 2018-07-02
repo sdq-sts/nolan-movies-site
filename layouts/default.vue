@@ -6,16 +6,18 @@
       :subtitle="['The', 'Dream is', 'Real.']"
     />
 
-    <TheSocialIcons
-      class="site__social-icons"
-      description="Uma pequena seleção dos meus filmes favoritos do Christopher Nolan"
-      facebook="http://facebook.com/profile.php?=73322363"
-      instagram="https://www.instagram.com/"
-      twitter="https://twitter.com/"
-      pinterest="https://www.pinterest.com"
-      email="#"
-    />
-    <nuxt/>
+    <div class="page">
+      <TheSocialIcons
+        class="page__social-icons"
+        description="Uma pequena seleção dos meus filmes favoritos do Christopher Nolan"
+        facebook="http://facebook.com/profile.php?=73322363"
+        instagram="https://www.instagram.com/"
+        twitter="https://twitter.com/"
+        pinterest="https://www.pinterest.com"
+        email="#"
+      />
+      <nuxt/>
+    </div>
   </div>
 </template>
 
@@ -55,10 +57,15 @@ html {
     width: var(--site-width);
     margin: 6em auto 0;
   }
+}
+
+.page {
+  position: relative;
 
   &__social-icons {
     width: calc(var(--site-width) / 2);
     margin-left: calc((100% - var(--site-width)) / 2);
+    z-index: 50;
   }
 }
 </style>
