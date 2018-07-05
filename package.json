@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "test": "npm run test:unit -- npm run test:2e2",
-    "test:unit": "TEST=unit ava ./test/specs/*.spec.js --verbose --watch",
+    "test:unit": "TEST=unit ava ./test/specs/*.spec.js --verbose --serial",
     "test:e2e": "TEST=e2e ava ./test/e2e/*.spec.js --verbose",
     "build": "nuxt build",
     "start": "nuxt start",
