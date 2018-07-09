@@ -13,7 +13,7 @@ const store = () => {
     getters: {
       authorName: (state) => state.authorName,
       authorImages: (state) => state.authorImages,
-      authorBio: (state) => state.bio,
+      authorBio: (state) => state.authorBio,
       movies: (state) => state.movies
     }
   })

@@ -1,27 +1,51 @@
 <template>
-  <div class="page-container">
-    <PostsGrid :posts="posts"/>
+  <div class="page-container home">
+    <PostsGrid 
+      class="home__posts-grid"
+      :posts="movies"
+    />
+
+    <AuthorBio
+      class="home__author-bio"
+      :authorName="authorName"
+      :images="authorImages"
+      :bio="authorBio"
+    />
   </div>
 </template>
 
 <script>
 import PostsGrid from '~/components/Home/PostsGrid'
+import AuthorBio from '~/components/Home/AuthorBio'
 
 export default {
   data () {
     return {
-      posts: [
-        { title: 'Inception', year: '2017', thumb: require('@/assets/Nolan/images/inception/thumb.jpg') },
-        { title: 'Batman', year: '2008', thumb: require('@/assets/Nolan/images/dark-knight/thumb.jpg') },
-        { title: 'Interstellar', year: '2011', thumb: require('@/assets/Nolan/images/interstellar/thumb.jpg') },
-        { title: 'Memento', year: '2004', thumb: require('@/assets/Nolan/images/memento/thumb.jpg') },
-        { title: 'Dunkirk', year: '2017', thumb: require('@/assets/Nolan/images/dunkirk/thumb.jpg') }
-      ]
+
+    }
+  },
+
+  computed: {
+    authorName () {
+      return this.$store.getters.authorName
+    },
+
+    authorBio () {
+      return this.$store.getters.authorBio
+    },
+
+    authorImages () {
+      return this.$store.getters.authorImages
+    },
+    
+    movies () {
+      return this.$store.getters.movies
     }
   },
 
   components: {
-    PostsGrid
+    PostsGrid,
+    AuthorBio
   }
 }
 </script>
@@ -32,5 +56,11 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
+}
+
+.home {
+  &__author-bio {
+    margin-bottom: 5em;
+  }
 }
 </style>

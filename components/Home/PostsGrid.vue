@@ -19,9 +19,7 @@ export default {
     }
   },
 
-  components: {
-    PostsGridCard
-  }
+  components: { PostsGridCard }
 }
 </script>
 
