@@ -1,15 +1,20 @@
 import Vuex from 'vuex'
+import Author from '~/assets/Nolan'
 
 const store = () => {
   return new Vuex.Store({
     state: {
-      posts: []
+      authorName: Author.name,
+      authorImages: Author.images,
+      authorBio: Author.bio,
+      movies: Author.movies
     },
 
-    mutations: {
-      SET_POSTS (state, posts) {
-        state.posts = posts
-      }
+    getters: {
+      authorName: (state) => state.authorName,
+      authorImages: (state) => state.authorImages,
+      authorBio: (state) => state.bio,
+      movies: (state) => state.movies
     }
   })
 }
