@@ -2,19 +2,19 @@
   <div class="site container">
     <TheHeader
       class="site__header"
-      :title="['The', 'Dream is', 'Real.']"
-      :subtitle="['The', 'Dream is', 'Real.']"
+      :title="siteTitle"
+      :subtitle="siteSubtitle"
     />
 
     <div class="page">
       <TheSocialIcons
         class="page__social-icons"
-        description="Uma pequena seleção dos meus filmes favoritos do Christopher Nolan"
-        facebook="http://facebook.com/profile.php?=73322363"
-        instagram="https://www.instagram.com/"
-        twitter="https://twitter.com/"
-        pinterest="https://www.pinterest.com"
-        email="#"
+        :description="siteDescription"
+        :facebook="social.facebook"
+        :instagram="social.instagram"
+        :twitter="social.twitter"
+        :pinterest="social.pinterest"
+        :email="social.email"
       />
       <nuxt/>
     </div>
@@ -26,6 +26,24 @@ import TheHeader from '~/components/Base/TheHeader'
 import TheSocialIcons from '~/components/Base/TheSocialIcons'
 
 export default {
+  computed: {
+    siteTitle () {
+      return this.$store.getters.siteTitle
+    },
+
+    siteSubtitle () {
+      return this.$store.getters.siteSubtitle
+    },
+
+    siteDescription () {
+      return this.$store.getters.siteDescription
+    },
+
+    social () {
+      return this.$store.getters.socialLinks
+    }
+  },
+
   components: {
     TheHeader,
     TheSocialIcons
