@@ -32,7 +32,6 @@ export default {
 .social-icons {
   display: flex;
   align-items: flex-start;
-  position: relative;
 }
 
 .links {
