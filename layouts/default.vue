@@ -6,7 +6,7 @@
       :subtitle="siteSubtitle"
     />
 
-    <div class="page">
+    <div class="site__page">
       <TheSocialIcons
         class="page__social-icons"
         :description="siteDescription"
@@ -18,12 +18,19 @@
       />
       <nuxt/>
     </div>
+
+    <TheFooter
+      class="site__footer"
+      toTopMsg="voltar para o topo"
+      :footerMsg="siteSubtitle.join(' ')"
+    />
   </div>
 </template>
 
 <script>
 import TheHeader from '~/components/Base/TheHeader'
 import TheSocialIcons from '~/components/Base/TheSocialIcons'
+import TheFooter from '~/components/Base/TheFooter'
 
 export default {
   computed: {
@@ -46,7 +53,8 @@ export default {
 
   components: {
     TheHeader,
-    TheSocialIcons
+    TheSocialIcons,
+    TheFooter
   }
 }
 </script>
@@ -75,14 +83,22 @@ html {
     width: var(--site-width);
     margin: 6em auto 0;
   }
+
+  &__page {
+    position: relative;
+  }
+
+  &__footer {
+    width: var(--site-width);
+    margin: 8em auto 4em;
+  }
 }
 
 .page {
-  position: relative;
-
   &__social-icons {
     width: calc(var(--site-width) / 2);
     margin-left: calc((100% - var(--site-width)) / 2);
+    position: absolute;
     z-index: 50;
   }
 }
