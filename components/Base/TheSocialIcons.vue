@@ -62,7 +62,7 @@ export default {
   }
 
   &__sentence {
-    font-family: 'Barlow Regular', sans-serif;
+    font-family: var(--text-font);
     font-size: .8em;
     color: var(--white);
     width: 250px;
