@@ -43,18 +43,15 @@ export default {
 </script>
 
 <style lang="scss">
-$white: #fff;
-$darkGrey: #121212;
-
 .site-header {
-  font-family: 'Bellefair', serif;
+  font-family: var(--main-font);
 
   &__subtitle {
     position: absolute;
     user-select: none;
     top: 0;
     left: 0;
-    color: $darkGrey;
+    color: var(--dark-gray);
     font-size: 9em;
     font-weight: normal;
     line-height: 1;
@@ -71,7 +68,7 @@ $darkGrey: #121212;
     letter-spacing: 5px;
     position: relative;
     line-height: 1;
-    color: $white;
+    color: var(--white);
     z-index: 50;
     margin: 0;
   }
