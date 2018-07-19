@@ -82,6 +82,7 @@ export default {
 
 .details {
   width: var(--site-width);
+  max-width: var(--site-max-width);
   margin: 0 auto;
   display: flex;
   align-items: flex-start;

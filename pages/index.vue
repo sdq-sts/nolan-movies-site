@@ -59,6 +59,11 @@ export default {
 }
 
 .home {
+  &__posts-grid {
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+  }
+
   &__author-bio {
     margin-bottom: 5em;
   }

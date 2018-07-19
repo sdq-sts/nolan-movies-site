@@ -25,7 +25,6 @@ export default {
 
 <style lang="scss">
 .posts-grid {
-  width: var(--site-width);
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;

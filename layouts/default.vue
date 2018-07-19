@@ -6,7 +6,7 @@
       :subtitle="siteSubtitle"
     />
 
-    <div class="site__page">
+    <div class="site__page page">
       <TheSocialIcons
         class="page__social-icons"
         :description="siteDescription"
@@ -81,6 +81,7 @@ html {
 .site {
   &__header {
     width: var(--site-width);
+    max-width: var(--site-max-width);
     margin: 6em auto 0;
   }
 
@@ -90,6 +91,7 @@ html {
 
   &__footer {
     width: var(--site-width);
+    max-width: var(--site-max-width);
     margin: 8em auto 4em;
   }
 }
@@ -97,8 +99,9 @@ html {
 .page {
   &__social-icons {
     width: calc(var(--site-width) / 2);
-    margin-left: calc((100% - var(--site-width)) / 2);
+    max-width: calc(var(--site-max-width) / 2);
     position: absolute;
+    right: 50%;
     z-index: 50;
   }
 }
