@@ -5,8 +5,12 @@
     </h2>
 
     <header class="header">
-      <h1 class="header__title" @click="goToHomePage">
-        <span v-for="(word, i) in theTitle" :key="i">{{ word }}<br/></span>
+      <h1 class="header__title" >
+        <span
+          v-for="(word, i) in theTitle"
+          :key="i"
+          @click="goToHomePage"
+        >{{ word }}<br/></span>
       </h1>
 
       <MenuIcon class="header__menu-icon"/>
@@ -77,7 +81,10 @@ export default {
     color: var(--white);
     z-index: 50;
     margin: 0;
-    cursor: pointer;
+
+    > span {
+      cursor: pointer;
+    }
   }
 
   &__menu-icon {
