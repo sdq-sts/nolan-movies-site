@@ -4,6 +4,7 @@
       class="posts-grid__card"
       v-for="(post, i) in posts" :key="i"
       :post="post"
+      :movieIndex="i"
     />
   </div>
 </template>
