@@ -5,7 +5,7 @@
     </h2>
 
     <header class="header">
-      <h1 class="header__title">
+      <h1 class="header__title" @click="goToHomePage">
         <span v-for="(word, i) in theTitle" :key="i">{{ word }}<br/></span>
       </h1>
 
@@ -35,6 +35,12 @@ export default {
 
     theSubtitle () {
       return this.subtitle ? this.subtitle : this.title
+    }
+  },
+
+  methods: {
+    goToHomePage () {
+      this.$router.push('/')
     }
   },
 
@@ -71,6 +77,7 @@ export default {
     color: var(--white);
     z-index: 50;
     margin: 0;
+    cursor: pointer;
   }
 
   &__menu-icon {
