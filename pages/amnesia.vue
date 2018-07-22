@@ -8,12 +8,15 @@
         :year="currentMovie.year"
         :image="currentMovie.images.postHeader"
       />
+
+      <PostCast class="post__cast" :castList="currentMovie.cast"/>
     </article>
   </div>
 </template>
 
 <script>
 import PostHeader from '@/components/Pages/PostHeader'
+import PostCast from '@/components/Pages/PostCast'
 
 export default {
   computed: {
@@ -26,13 +29,19 @@ export default {
     }
   },
 
-  components: { PostHeader }
+  components: { PostHeader, PostCast }
 }
 </script>
 
 <style lang="scss">
 .post {
   &__header {
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+  }
+
+  &__cast {
     width: var(--site-width);
     max-width: var(--site-max-width);
     margin: 0 auto;
