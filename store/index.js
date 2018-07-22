@@ -11,7 +11,8 @@ const store = () => {
       authorName: Author.name,
       authorImages: Author.images,
       authorBio: Author.bio,
-      movies: Author.movies
+      movies: Author.movies,
+      currentMovie: null
     },
 
     getters: {
@@ -22,7 +23,15 @@ const store = () => {
       authorName: (state) => state.authorName,
       authorImages: (state) => state.authorImages,
       authorBio: (state) => state.authorBio,
-      movies: (state) => state.movies
+      movies: (state) => state.movies,
+      currentMovie: (state) => state.currentMovie,
+      getMovie: (state) => (index) =>  state.movies[index]
+    },
+
+    mutations: {
+      SET_CURRENT_MOVIE (state, movieIndex) {
+        state.currentMovie = movieIndex
+      }
     }
   })
 }

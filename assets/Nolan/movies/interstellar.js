@@ -1,6 +1,6 @@
 export default {
-  link: '/batman',
-  title: 'Batman',
+  link: '/interstelar',
+  title: 'Interstelar',
   originalTitle: 'Amnesia',
   imdbLink: 'https://www.imdb.com/title/tt0209144/',
   year: 2008,
@@ -11,7 +11,7 @@ export default {
     Fusce a neque vel quam consequat volutpat. Integer interdum vitae leo ac porta. Aliquam erat tellus, ullamcorper in efficitur ut, condimentum in nibh. Nunc rutrum libero sapien, in egestas eros aliquet sit amet. Fusce eleifend id lectus vitae imperdiet. Cras elementum tempor feugiat. Proin sit amet convallis leo. Donec lacinia finibus tellus a vestibulum. Nunc a suscipit urna. Vivamus molestie felis non augue fringilla malesuada. Donec posuere non eros id tristique. In consequat suscipit tortor sit amet convallis.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim venenatis tortor id suscipit. Donec vitae ultricies leo, eu blandit orci. Proin et molestie massa, vel aliquet nunc. Sed tortor enim, venenatis lacinia lorem in, tincidunt tempus massa. Mauris venenatis, nisi nec blandit porta, urna magna pellentesque justo, nec ornare libero diam ac lectus. Cras pellentesque dictum porta. Mauris sollicitudin est nec dictum convallis. Suspendisse mattis a leo efficitur scelerisque. Donec eget tempor sem, eu feugiat augue. Duis vulputate risus eget lacinia iaculis.`,
   plot: `Após um assalto que resultou na morte de sua esposa e que o deixou em estado gravíssimo, Leonard Shelby (Guy Pearce) passa a sofrer de amnésia recente. Ele não consegue se lembrar de fatos que aconteceram há 15 minutos. Mesmo assim ele decide ir atrás do assassino de sua mulher e se vingar.`,
-  thumb: require('../images/dark-knight/thumb.jpg'),
+  thumb: require('../images/interstellar/thumb.jpg'),
   images: {
 
   }

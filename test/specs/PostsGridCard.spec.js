@@ -5,7 +5,8 @@ import PostsGridCard from '../../components/Home/PostsGridCard'
 let wrapper
 
 const propsData = {
-  post: { title: 'Inception', year: '2017', thumb: '/path/to/image.jpg' }
+  post: { title: 'Inception', year: '2017', thumb: '/path/to/image.jpg' },
+  movieIndex: 3
 }
 
 test.beforeEach(() => {

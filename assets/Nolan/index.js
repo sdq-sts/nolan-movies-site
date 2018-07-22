@@ -1,5 +1,3 @@
-import amnesia from './movies/amnesia'
-
 export default {
   name: 'Christopher Nolan',
 
@@ -31,12 +29,10 @@ export default {
   },
 
   movies: [
-    require('./movies/amnesia').default,
+    require('./movies/memento').default,
     require('./movies/batman').default,
     require('./movies/dunkirk').default,
     require('./movies/inception').default,
-    require('./movies/memento').default
+    require('./movies/interstellar').default
   ]
 }
-
-console.log(require('./movies/amnesia.js'))
