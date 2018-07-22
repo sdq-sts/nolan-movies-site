@@ -10,6 +10,14 @@
       />
 
       <PostCast class="post__cast" :castList="currentMovie.cast"/>
+
+      <div class="post__big-image big-image">
+        <img
+          class="big-image__img"
+          :src="currentMovie.images.postBigImage"
+          :alt="currentMovie.title"
+        />
+      </div>
     </article>
   </div>
 </template>
@@ -45,6 +53,14 @@ export default {
     width: var(--site-width);
     max-width: var(--site-max-width);
     margin: 0 auto;
+  }
+}
+
+.big-image {
+  margin-top: 4em;
+
+  &__img {
+    width: 100%;
   }
 }
 </style>
