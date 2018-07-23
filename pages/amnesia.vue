@@ -25,6 +25,14 @@
         :firstImage="currentMovie.images.firstAboutImage"
         :secondImage="currentMovie.images.secondAboutImage"
       />
+
+      <PostPlot
+        class="post__plot"
+        :plot="currentMovie.plot"
+        :smallImageSrc="currentMovie.images.plotSmallImg"
+        :bigImageSrc="currentMovie.images.plotBigImg"
+        :imdbLink="currentMovie.imdbLink"
+      />
     </article>
   </div>
 </template>
@@ -33,6 +41,7 @@
 import PostHeader from '@/components/Pages/PostHeader'
 import PostCast from '@/components/Pages/PostCast'
 import PostAbout from '@/components/Pages/PostAbout'
+import PostPlot from '@/components/Pages/PostPlot'
 
 export default {
   computed: {
@@ -45,7 +54,7 @@ export default {
     }
   },
 
-  components: { PostHeader, PostCast, PostAbout }
+  components: { PostHeader, PostCast, PostAbout, PostPlot }
 }
 </script>
 
@@ -53,20 +62,21 @@ export default {
 .post {
   &__header,
   &__cast,
-  &__about-movie {
+  &__about-movie,
+  &__plot {
     width: var(--site-width);
     max-width: var(--site-max-width);
     margin: 0 auto;
   }
 
-  &__about-movie {
-    margin-top: 3em;
+  &__about-movie,
+  &__big-image,
+  &__plot {
+    margin-top: var(--gutter);
   }
 }
 
 .big-image {
-  margin-top: 3em;
-
   &__img {
     width: 100%;
   }

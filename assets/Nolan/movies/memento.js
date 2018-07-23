@@ -10,12 +10,17 @@ export default {
 
     Fusce a neque vel quam consequat volutpat. Integer interdum vitae leo ac porta. Aliquam erat tellus, ullamcorper in efficitur ut, condimentum in nibh. Nunc rutrum libero sapien, in egestas eros aliquet sit amet. Fusce eleifend id lectus vitae imperdiet. Cras elementum tempor feugiat. Proin sit amet convallis leo. Donec lacinia finibus tellus a vestibulum. Nunc a suscipit urna. Vivamus molestie felis non augue fringilla malesuada. Donec posuere non eros id tristique. In consequat suscipit tortor sit amet convallis.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim venenatis tortor id suscipit. Donec vitae ultricies leo, eu blandit orci. Proin et molestie massa, vel aliquet nunc. Sed tortor enim, venenatis lacinia lorem in, tincidunt tempus massa. Mauris venenatis, nisi nec blandit porta, urna magna pellentesque justo, nec ornare libero diam ac lectus. Cras pellentesque dictum porta. Mauris sollicitudin est nec dictum convallis. Suspendisse mattis a leo efficitur scelerisque. Donec eget tempor sem, eu feugiat augue. Duis vulputate risus eget lacinia iaculis.`,
-  plot: `Após um assalto que resultou na morte de sua esposa e que o deixou em estado gravíssimo, Leonard Shelby (Guy Pearce) passa a sofrer de amnésia recente. Ele não consegue se lembrar de fatos que aconteceram há 15 minutos. Mesmo assim ele decide ir atrás do assassino de sua mulher e se vingar.`,
+  plot: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis enim justo. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Cras vitae enim fringilla, faucibus velit vel, ultricies libero. Suspendisse vitae volutpat mi. Quisque consequat, neque non laoreet maximus, nisl eros commodo purus, nec blandit tortor mi eget dolor. Aliquam erat volutpat. Etiam non nibh in lacus pretium luctus eu eu felis. Aliquam nec tincidunt ante, vel faucibus lectus. Aliquam fringilla arcu eu lorem condimentum bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros diam, scelerisque non ipsum quis, euismod vehicula neque. Pellentesque sit amet ex aliquam, pellentesque risus pharetra, mollis metus.
+
+  Fusce a neque vel quam consequat volutpat. Integer interdum vitae leo ac porta. Aliquam erat tellus, ullamcorper in efficitur ut, condimentum in nibh. Nunc rutrum libero sapien, in egestas eros aliquet sit amet. Fusce eleifend id lectus vitae imperdiet. Cras elementum tempor feugiat. Proin sit amet convallis leo. Donec lacinia finibus tellus a vestibulum. Nunc a suscipit urna. Vivamus molestie felis non augue fringilla malesuada. Donec posuere non eros id tristique. In consequat suscipit tortor sit amet convallis.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim venenatis tortor id suscipit. Donec vitae ultricies leo, eu blandit orci. Proin et molestie massa, vel aliquet nunc. Sed tortor enim, venenatis lacinia lorem in, tincidunt tempus massa. Mauris venenatis, nisi nec blandit porta, urna magna pellentesque justo, nec ornare libero diam ac lectus. Cras pellentesque dictum porta. Mauris sollicitudin est nec dictum convallis. Suspendisse mattis a leo efficitur scelerisque. Donec eget tempor sem, eu feugiat augue. Duis vulputate risus eget lacinia iaculis.`,
   thumb: require('../images/memento/thumb.jpg'),
   images: {
     postHeader: require('../images/memento/post-header.jpg'),
     postBigImage: require('../images/memento/post-big-image.jpg'),
     firstAboutImage: require('../images/memento/post-header.jpg'),
     secondAboutImage: require('../images/memento/post-header.jpg'),
+    plotSmallImg: require('../images/memento/post-big-image.jpg'),
+    plotBigImg: require('../images/memento/post-big-image.jpg')
   }
 }
