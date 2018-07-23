@@ -18,6 +18,13 @@
           :alt="currentMovie.title"
         />
       </div>
+
+      <PostAbout
+        class="post__about-movie"
+        :text="currentMovie.about"
+        :firstImage="currentMovie.images.firstAboutImage"
+        :secondImage="currentMovie.images.secondAboutImage"
+      />
     </article>
   </div>
 </template>
@@ -25,6 +32,7 @@
 <script>
 import PostHeader from '@/components/Pages/PostHeader'
 import PostCast from '@/components/Pages/PostCast'
+import PostAbout from '@/components/Pages/PostAbout'
 
 export default {
   computed: {
@@ -37,27 +45,27 @@ export default {
     }
   },
 
-  components: { PostHeader, PostCast }
+  components: { PostHeader, PostCast, PostAbout }
 }
 </script>
 
 <style lang="scss">
 .post {
-  &__header {
+  &__header,
+  &__cast,
+  &__about-movie {
     width: var(--site-width);
     max-width: var(--site-max-width);
     margin: 0 auto;
   }
 
-  &__cast {
-    width: var(--site-width);
-    max-width: var(--site-max-width);
-    margin: 0 auto;
+  &__about-movie {
+    margin-top: 3em;
   }
 }
 
 .big-image {
-  margin-top: 4em;
+  margin-top: 3em;
 
   &__img {
     width: 100%;
