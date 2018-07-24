@@ -9,7 +9,10 @@
         :image="currentMovie.images.postHeader"
       />
 
-      <PostCast class="post__cast" :castList="currentMovie.cast"/>
+      <PostCast
+        class="post__cast"
+        :castList="currentMovie.cast"
+      />
 
       <div class="post__big-image big-image">
         <img
@@ -34,6 +37,12 @@
         :imdbLink="currentMovie.imdbLink"
       />
     </article>
+
+    <RelatedMovies
+      class="movie-page__related-movies"
+      :movieIndex="movieIndex"
+      :movieList="movieList"
+    />
   </div>
 </template>
 
@@ -42,23 +51,38 @@ import PostHeader from '@/components/Pages/PostHeader'
 import PostCast from '@/components/Pages/PostCast'
 import PostAbout from '@/components/Pages/PostAbout'
 import PostPlot from '@/components/Pages/PostPlot'
+import RelatedMovies from '@/components/Pages/RelatedMovies'
 
 export default {
   computed: {
-    currentMovie () {
-      const movieIndex = this.$store.getters.currentMovie !== null
-        ? this.$store.getters.currentMovie
-        : 0
+    movieList () {
+      return this.$store.getters.movies
+    },
 
-      return this.$store.getters.getMovie(movieIndex)
+    movieIndex () {
+      return this.$store.getters.currentMovie !== null ? this.$store.getters.currentMovie : 0
+    },
+
+    currentMovie () {
+      return this.$store.getters.getMovie(this.movieIndex)
     }
   },
 
-  components: { PostHeader, PostCast, PostAbout, PostPlot }
+  components: { PostHeader, PostCast, PostAbout, PostPlot, RelatedMovies }
 }
 </script>
 
 <style lang="scss">
+.movie-page {
+  &__related-movies {
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    margin: calc(var(--gutter) * 2) auto;
+  }
+}
+
 .post {
   &__header,
   &__cast,
