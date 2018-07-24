@@ -41,6 +41,9 @@ export default {
 
   methods: {
     goToPage (i) {
+      const clickedMovie = this.movieList.findIndex(elm => elm.link === this.movies[i].link)
+
+      this.$store.commit('SET_CURRENT_MOVIE', clickedMovie)
       this.$router.push(this.movies[i].link)
     }
   }
