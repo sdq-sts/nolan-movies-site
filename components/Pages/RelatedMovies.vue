@@ -34,6 +34,11 @@ export default {
   },
 
   computed: {
+    // movieIndex () {
+    //   const currentMovie = this.$store.getters.movies.findIndex(elm => elm.link === this.$nuxt.$route.path)
+    //   return currentMovie
+    // },
+
     movies () {
       return this.movieList.filter((m, i) => i !== this.movieIndex)
     }

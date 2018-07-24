@@ -45,13 +45,10 @@ import PostAbout from '@/components/Pages/PostAbout'
 import PostPlot from '@/components/Pages/PostPlot'
 
 export default {
-  computed: {
-    movieIndex () {
-      return this.$store.getters.currentMovie !== null ? this.$store.getters.currentMovie : 0
-    },
-
-    currentMovie () {
-      return this.$store.getters.getMovie(this.movieIndex)
+  props: {
+    currentMovie: {
+      type: Object,
+      required: true
     }
   },
 

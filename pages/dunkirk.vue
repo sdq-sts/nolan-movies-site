@@ -1,6 +1,6 @@
 <template>
   <div class="movie-page">
-    <Post/>
+    <Post :currentMovie="currentMovie"/>
 
     <RelatedMovies
       class="movie-page__related-movies"
@@ -20,9 +20,17 @@ export default {
       return this.$store.getters.movies
     },
 
+    currentMovie () {
+      return this.$store.getters.getMovie(this.movieIndex)
+    },
+
     movieIndex () {
-      return this.$store.getters.currentMovie !== null ? this.$store.getters.currentMovie : 0
+      return  this.$store.getters.movies.findIndex(elm => elm.link === this.$nuxt.$route.path)
     }
+  },
+
+  beforeMount() {
+    this.$store.commit('SET_CURRENT_MOVIE', this.movieIndex)
   },
 
   components: { Post, RelatedMovies }
