@@ -3,8 +3,8 @@ export default {
   title: 'Amnésia',
   originalTitle: 'Memento',
   imdbLink: 'https://www.imdb.com/title/tt0209144/',
-  year: 2008,
-  cast: ['Guy Pearce', 'Carrie-Anne Moss', 'Joe Pantoliano', 'Mark Boone Junior', 'Russ Fega', 'Jorja Fox'],
+  year: 2000,
+  cast: ['Guy Pearce', 'Carrie-Anne Moss', 'Joe Pantoliano', 'Mark Boone Junior', 'Russ Fega', 'Jorja Fox', 'Stephen Tobolowsky', 'Harriet Sansom Harris', 'Thomas Lennon', 'Callum Keith Rennie'],
   about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis enim justo. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Cras vitae enim fringilla, faucibus velit vel, ultricies libero. Suspendisse vitae volutpat mi. Quisque consequat, neque non laoreet maximus, nisl eros commodo purus, nec blandit tortor mi eget dolor. Aliquam erat volutpat. Etiam non nibh in lacus pretium luctus eu eu felis. Aliquam nec tincidunt ante, vel faucibus lectus. Aliquam fringilla arcu eu lorem condimentum bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros diam, scelerisque non ipsum quis, euismod vehicula neque. Pellentesque sit amet ex aliquam, pellentesque risus pharetra, mollis metus.
     In congue venenatis orci vitae porttitor. Donec fringilla pretium est ut posuere. Nulla varius nunc eget justo posuere interdum. Donec suscipit, arcu et ullamcorper laoreet, eros enim facilisis lacus, a aliquam est sem non mi. Morbi vitae magna sit amet lorem elementum faucibus nec et felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ipsum nisl, dapibus ut suscipit ut, tristique eget turpis. Nulla bibendum pellentesque libero id vulputate. Maecenas sodales rhoncus erat, ac dignissim dui imperdiet a. Pellentesque sed rutrum urna, at gravida leo. Ut tempor, est vel vehicula laoreet, velit dui rutrum mi, ac varius lectus sapien et nisi. Ut nec ligula vitae leo facilisis euismod.
 
@@ -18,9 +18,9 @@ export default {
   images: {
     postHeader: require('../images/memento/post-header.jpg'),
     postBigImage: require('../images/memento/post-big-image.jpg'),
-    firstAboutImage: require('../images/memento/post-header.jpg'),
-    secondAboutImage: require('../images/memento/post-header.jpg'),
-    plotSmallImg: require('../images/memento/post-big-image.jpg'),
-    plotBigImg: require('../images/memento/post-big-image.jpg')
+    firstAboutImage: require('../images/memento/about-image-1.jpg'),
+    secondAboutImage: require('../images/memento/about-image-2.jpg'),
+    plotSmallImg: require('../images/memento/plot-small-image.jpg'),
+    plotBigImg: require('../images/memento/plot-big-image.jpg')
   }
 }
