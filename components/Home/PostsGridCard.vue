@@ -29,7 +29,6 @@ export default {
     showPost () {
       const route = this.post.link
 
-      this.$store.commit('SET_CURRENT_MOVIE', this.movieIndex)
       this.$router.push(route)
     }
   }

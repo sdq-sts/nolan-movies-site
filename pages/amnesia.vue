@@ -29,10 +29,6 @@ export default {
     }
   },
 
-  beforeMount() {
-    this.$store.commit('SET_CURRENT_MOVIE', this.movieIndex)
-  },
-
   components: { Post, RelatedMovies }
 }
 </script>
