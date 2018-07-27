@@ -5,7 +5,7 @@
   "author": "Sadraque <sdq.sts@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env HOST=0.0.0.0 PORT=3333 nuxt",
     "test": "npm run test:unit -- npm run test:e2e",
     "test:unit": "TEST=unit ava ./test/specs/*.spec.js --verbose --serial",
     "test:e2e": "TEST=e2e ava ./test/e2e/*.spec.js --verbose",
@@ -16,7 +16,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.4.0"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.19",
@@ -35,11 +35,6 @@
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^1.0.1",
     "sass-loader": "^7.0.3"
-  },
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0"
-    }
   },
   "ava": {
     "require": [
