@@ -17,7 +17,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 4em;
+  width: 70px;
   cursor: pointer;
 
   &__first-line,
@@ -29,8 +29,19 @@ export default {
   }
 
   &__second-line {
-    margin: .5em 0;
+    margin: .65em 0;
     width: 60%;
+  }
+}
+
+// Media queries
+@media screen and (max-width: 580px) {
+  .menu-icon {
+    width: 50px;
+
+    &__second-line {
+      margin: .5em 0;
+    }
   }
 }
 </style>

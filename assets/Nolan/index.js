@@ -20,6 +20,13 @@ export default {
   siteSubtitle: ['The', 'Dream is', 'Real.'],
   siteDescription: 'Uma pequena seleção dos meus filmes favoritos do Christopher Nolan',
 
+  menu: [
+    { name: 'Biografia', link: 'https://www.imdb.com/name/nm0634240/bio?ref_=nm_ql_1' },
+    { name: 'Filmografia', link: 'https://www.imdb.com/name/nm0634240/?nmdp=1&ref_=nm_ql_4#filmography'},
+    { name: 'Galeria de imagens', link: 'https://www.imdb.com/name/nm0634240/mediaindex?ref_=nm_ql_3' },
+    { name: 'Vídeos', link: 'https://www.imdb.com/name/nm0634240/videogallery?ref_=nm_ql_5' }
+  ],
+
   social: {
     facebook: 'http://facebook.com/profile.php?=73322363',
     instagram: 'https://www.instagram.com/',

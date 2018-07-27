@@ -1,13 +1,47 @@
-:root {
-  --site-width: 80%;
-  --site-max-width: 1360px;
-  --main-bg-color: #181818;
-  --text-color: #fff;
-  --gray: #686868;
-  --dark-gray: #121212;
-  --white: #fff;
-  --main-font: 'Bellefair', serif;
-  --text-font: 'Barlow Regular', sans-serif;
-  --gutter: 3em;
-  --text-line-height: 1.2;
+@media screen and (min-width: 960px) {
+  :root {
+    --site-width: 80%;
+    --site-max-width: 1360px;
+    --main-bg-color: #181818;
+    --text-color: #fff;
+    --gray: #686868;
+    --dark-gray: #121212;
+    --white: #fff;
+    --main-font: 'Bellefair', serif;
+    --text-font: 'Barlow Regular', sans-serif;
+    --gutter: 3em;
+    --text-line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  :root {
+    --site-width: 90%;
+    --site-max-width: 1360px;
+    --main-bg-color: #181818;
+    --text-color: #fff;
+    --gray: #686868;
+    --dark-gray: #121212;
+    --white: #fff;
+    --main-font: 'Bellefair', serif;
+    --text-font: 'Barlow Regular', sans-serif;
+    --gutter: 2em;
+    --text-line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --site-width: 90%;
+    --site-max-width: 1360px;
+    --main-bg-color: #181818;
+    --text-color: #fff;
+    --gray: #686868;
+    --dark-gray: #121212;
+    --white: #fff;
+    --main-font: 'Bellefair', serif;
+    --text-font: 'Barlow Regular', sans-serif;
+    --gutter: 1em;
+    --text-line-height: 1.2;
+  }
 }

@@ -1,13 +1,13 @@
 <template>
   <footer class="site-footer">
     <span class="site-footer__to-top to-top">
-      <span class="to-top__line"></span>
-      <span class="to-top__msg">{{ toTopMsg }}</span>
+      <span class="to-top__line" aria-hidden="true"></span>
+      <span class="to-top__msg" aria-hidden="true">{{ toTopMsg }}</span>
     </span>
 
     <span class="site-footer__msg footer-msg">
       <span class="footer-msg__text">{{ fmtdFooterMsg }}</span>
-      <span class="footer-msg__line"></span>
+      <span class="footer-msg__line" aria-hidden="true"></span>
       <span class="footer-msg__year">{{ currentYear }}</span>
     </span>
   </footer>
@@ -70,6 +70,7 @@ export default {
 
   &__text, &__line, &__year {
     display: inline-block;
+    font-size: 1em;
   }
 
   &__line {
@@ -77,6 +78,25 @@ export default {
     height: 1px;
     width: 5em;
     margin: auto .75em;
+  }
+}
+
+// Media queries
+@media screen and (max-width: 480px) {
+  .to-top {
+    &__msg {
+      font-size: .75em;
+      width: 75px;
+    }
+  }
+
+  .footer-msg {
+    display: flex;
+    align-items: center;
+
+    &__text, &__line, &__year {
+      font-size: .75em;
+    }
   }
 }
 </style>

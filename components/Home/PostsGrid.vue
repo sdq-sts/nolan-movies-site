@@ -29,14 +29,27 @@ export default {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding-left: 5%;
+  justify-content: space-between;
+  padding-left: calc(var(--gutter) * 3);
 
   &__card {
-    width: 50%;
-    margin-bottom: 3em;
+    width: calc(50% - var(--gutter));
+    margin-bottom: calc(var(--gutter) * 2);
 
     &:first-child {
-      margin-left: 50%;
+      margin-left: calc(50% + var(--gutter));
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .posts-grid {
+    &__card {
+      width: 100%;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
   }
 }

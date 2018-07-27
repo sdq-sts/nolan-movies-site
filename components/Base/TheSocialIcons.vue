@@ -38,23 +38,27 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 2em;
+  margin-top: calc(var(--gutter) * 0.66666);
   flex-wrap: wrap;
 
   &__icon {
     color: var(--white);
-    margin-top: 1em;
+    margin-top: 1.5em;
+
+    &:first-child {
+      margin-top: 0;
+    } 
   }
 }
 
 .description {
   display: flex;
-  margin-top: 3em;
+  margin-top: calc(var(--gutter) * 0.66666);
   align-items: center;
 
   &__line {
     height: 1px;
-    width: 70px;
+    width: 30%;
     background: var(--white);
     display: inline-block;
     margin: 0 1em;
@@ -64,9 +68,25 @@ export default {
   &__sentence {
     font-family: var(--text-font);
     font-size: .8em;
+    line-height: var(--text-line-height);
     color: var(--white);
-    width: 250px;
+    width: 70%;
     display: inline-block;
+  }
+}
+
+// Media queries
+@media screen and (max-width: 480px) {
+  .links {
+    &__icon {
+      margin-top: 1em;
+    }
+  }
+
+  .description {
+    &__sentence {
+      font-size: .7em;
+    }
   }
 }
 </style>

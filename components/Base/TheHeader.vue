@@ -62,9 +62,11 @@ export default {
     top: 0;
     left: 0;
     color: var(--dark-gray);
-    font-size: 9em;
+    font-size: 14vw;
     font-weight: normal;
-    line-height: 1;
+    line-height: .8;
+    letter-spacing: 5px;
+    margin-top: 20px;
   }
 }
 
@@ -73,11 +75,11 @@ export default {
   position: relative;
 
   &__title {
-    font-size: 4em;
+    font-size: 6vw;
     font-weight: normal;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     position: relative;
-    line-height: 1;
+    line-height: .9;
     color: var(--white);
     z-index: 50;
     margin: 0;
@@ -92,6 +94,29 @@ export default {
     z-index: 50;
     top: 0;
     right: 0;
+  }
+}
+
+// Media queries
+@media screen and (max-width: 960px) {
+  .header {
+    &__title {
+      font-size: 8vw;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .site-header {
+    &__subtitle {
+      font-size: 24vw;
+    }
+  }
+
+  .header {
+    &__title {
+      font-size: 14vw;
+    }
   }
 }
 </style>

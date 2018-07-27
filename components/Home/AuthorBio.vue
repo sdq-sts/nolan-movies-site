@@ -8,7 +8,7 @@
           <img :src="images[0]" :alt="authorName">
         </div>
         <div class="bio-gallery__side gallery-sidebar">
-          <p class="gallery-sidebar__title">{{ title }}</p>
+          <h4 class="gallery-sidebar__title">{{ title }}</h4>
           <div class="gallery-sidebar__img"> <img :src="images[1]" :alt="authorName"> </div>
           <div class="gallery-sidebar__img"> <img :src="images[2]" :alt="authorName"> </div>
           <div class="gallery-sidebar__img"> <img :src="images[3]" :alt="authorName"> </div>
@@ -59,13 +59,14 @@ export default {
 
 <style lang="scss">
 .author-bio {
+  overflow: hidden;
   position: relative;
 
   &__title {
     position: absolute;
     top: 0;
     font-family: var(--main-font);
-    font-size: 10em;
+    font-size: 13.9vw;
     font-weight: normal;
     width: 100%;
     margin: 0 auto;
@@ -90,10 +91,6 @@ export default {
   &__gallery,
   &__text {
     width: 50%;
-
-    p {
-      font-size: 1em;
-    }
 
     img {
       max-width: 100%;
@@ -122,7 +119,8 @@ export default {
 .gallery-sidebar {
   &__title {
     font-family: var(--main-font);
-    font-size: 1.2em;
+    font-size: 2vw;
+    font-weight: normal;
     color: var(--white);
     position: absolute;
     top: 0;
@@ -142,18 +140,68 @@ export default {
     color: var(--white);
     font-family: var(--main-font);
     font-weight: normal;
-    font-size: 3em;
+    font-size: 4vw;
   }
 
   &__text {
     color: var(--white);
-    margin-left: 20%;
-    margin-top: 3em;
-    line-height: 1.5em;
-    font-size: .8em;
+    margin-left: calc(var(--gutter) * 3);
+    margin-top: var(--gutter);
+    font-size: .8vw;
+    line-height: calc(var(--text-line-height) * 1.5);
+    text-align: justify;
 
     > p {
-      margin-bottom: 3em;
+      margin-bottom: var(--gutter);
+    }
+  }
+}
+
+// Media queries
+@media screen and (max-width: 960px) {
+  .bio-text {
+    &__title {
+      font-size: 4vw;
+    }
+
+    &__text {
+      font-size: 1.05vw;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .author-bio {
+    &__title {
+      display: none;
+    }
+  }
+
+  .details {
+    flex-wrap: wrap;
+
+    &__gallery,
+    &__text {
+      width: 100%;
+    }
+  }
+
+  .gallery-sidebar {
+    &__title {
+      font-size: 5vw;
+    }
+  }
+
+  .bio-text {
+    margin-top: var(--gutter);
+
+    &__title {
+      font-size: 10vw;
+    }
+
+    &__text {
+      margin-left: 0;
+      font-size: 3vw;
     }
   }
 }

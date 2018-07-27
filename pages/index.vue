@@ -65,7 +65,8 @@ export default {
   }
 
   &__author-bio {
-    margin-bottom: 5em;
+    margin-top: calc(var(--gutter) * 2);
+    margin-bottom: calc(var(--gutter) * 2);
   }
 }
 </style>

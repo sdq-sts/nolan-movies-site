@@ -40,7 +40,7 @@ export default {
   position: relative;
 
   &__thumb {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
 
     img {
@@ -53,7 +53,7 @@ export default {
   &__meta {
     position: absolute;
     bottom: 0;
-    left: 4em;
+    margin-left: calc(var(--gutter) * -1);
   }
 }
 
@@ -71,9 +71,31 @@ export default {
     font-family: var(--text-font);
     display: block;
     letter-spacing: 1px;
-    font-size: .65em;
+    font-size: .75em;
     padding-left: 3px;
     color: var(--gray);
+  }
+}
+
+@media screen and (max-width: 768px) {
+.meta {
+  &__title {
+    font-size: 2em;
+  }
+
+  &__year {
+    font-size: .65em;
+  }
+}
+}
+
+@media screen and (max-width: 480px) {
+  .grid-card {
+    &__meta {
+      position: absolute;
+      bottom: 0;
+      margin-left: calc(var(--gutter) * -2);
+    }
   }
 }
 </style>

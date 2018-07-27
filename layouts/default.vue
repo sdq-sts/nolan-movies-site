@@ -82,7 +82,7 @@ html {
   &__header {
     width: var(--site-width);
     max-width: var(--site-max-width);
-    margin: 6em auto 0;
+    margin: calc(var(--gutter) * 3) auto 0;
   }
 
   &__page {
@@ -102,7 +102,45 @@ html {
     max-width: calc(var(--site-max-width) / 2);
     position: absolute;
     right: 50%;
+    top: calc(var(--gutter) / 2);
     z-index: 50;
+  }
+}
+
+// Media queries
+@media screen and (max-width: 960px) {
+  .site{
+    &__header {
+      margin: calc(var(--gutter) * 2) auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .site{
+    &__header {
+      margin: calc(var(--gutter) * 2) auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .site {
+    &__header {
+      margin: calc(var(--gutter) * 3) auto 0;
+    }
+  }
+
+  .page {
+    margin-top: calc(var(--gutter) * 2);
+
+    &__social-icons {
+      width: var(--site-width);
+      max-width: calc(var(--site-max-width) / 2);
+      position: relative;
+      right: 0;
+      margin: 0 auto calc(var(--gutter) * 3);
+    }
   }
 }
 </style>
