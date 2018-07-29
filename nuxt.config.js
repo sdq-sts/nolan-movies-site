@@ -27,7 +27,7 @@ module.exports = {
 
   // Modules
   modules: [
-    ['nuxt-sass-resources-loader', '@/assets/variables.scss'],
+    ['nuxt-sass-resources-loader', '@/assets/scss/main.scss'],
   ],
 
   // Render
