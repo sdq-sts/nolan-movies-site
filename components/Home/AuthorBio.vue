@@ -119,7 +119,7 @@ export default {
 .gallery-sidebar {
   &__title {
     font-family: var(--main-font);
-    font-size: calc(var(--text-font-size) * 2);
+    font-size: calc(var(--text-font-size) * 1.5);
     font-weight: normal;
     color: var(--white);
     position: absolute;
@@ -140,25 +140,33 @@ export default {
     color: var(--white);
     font-family: var(--main-font);
     font-weight: normal;
-    font-size: calc(var(--text-font-size) * 3);
+    font-size: calc(var(--text-font-size) * 3.5);
   }
 
   &__text {
+    font-family: var(--text-font);
     color: var(--white);
     margin-left: calc(var(--gutter) * 3);
     margin-top: var(--gutter);
-    // font-size: var(--text-font-size);
     line-height: var(--text-line-height);
     text-align: justify;
 
     > p {
       margin-bottom: var(--gutter);
-      font-size: var(--text-font-size);
+      font-size: calc(var(--text-font-size) * .95);
     }
   }
 }
 
 // Media queries
+@media screen and (max-width: 960px) {
+  .bio-text {
+    &__text {
+      margin-left: calc(var(--gutter) * 2);
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .bio-text {
     margin-top: var(--gutter);
