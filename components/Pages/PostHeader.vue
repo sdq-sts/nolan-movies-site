@@ -40,15 +40,15 @@ export default {
 <style lang="scss">
 .post-header {
   &__meta {
-    padding-left: 20%;
+    padding-left: calc(var(--gutter) * 3);
     margin-top: .75em;
 
     > h3 {
-    font-family: var(--main-font);
-    letter-spacing: 1px;
-    font-size: 1.5em;
-    color: var(--gray);
-    font-weight: normal;
+      font-family: var(--main-font);
+      letter-spacing: 1px;
+      font-size: calc(var(--text-font-size) * 1.5);
+      color: var(--gray);
+      font-weight: normal;
     }
   }
 }
@@ -58,24 +58,46 @@ export default {
 
   &__title {
     color: var(--white);
-    width: 30%;
+    width: 40%;
     align-self: flex-end;
     text-align: right;
     transform: translateY(20%);
-    margin-right: 1em;
+    margin-right: calc(var(--gutter) / 3);
     line-height: 1;
     font-family: var(--main-font);
     letter-spacing: 2px;
-    font-size: 4em;
+    font-size: 5vw;
     font-weight: normal;
   }
 
   &__image {
-    width: 70%;
+    width: 60%;
 
     > img {
       width: 100%;
       display: block;
+    }
+  }
+}
+
+// Media queries
+@media all and (max-width: 480px) {
+  .post-main {
+    &__title {
+      width: 30%;
+      font-size: 7vw;
+    }
+
+    &__image {
+      width: 70%;
+    }
+  }
+
+  .post-header {
+    &__meta {
+      > h3 {
+        font-size: calc(var(--text-font-size) * 1);
+      }
     }
   }
 }

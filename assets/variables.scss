@@ -11,6 +11,7 @@
     --text-font: 'Barlow Regular', sans-serif;
     --gutter: 3em;
     --text-line-height: 1.2;
+    --text-font-size: 1vw;
   }
 }
 
@@ -27,6 +28,7 @@
     --text-font: 'Barlow Regular', sans-serif;
     --gutter: 2em;
     --text-line-height: 1.2;
+    --text-font-size: 1.5vw;
   }
 }
 
@@ -43,5 +45,23 @@
     --text-font: 'Barlow Regular', sans-serif;
     --gutter: 1em;
     --text-line-height: 1.2;
+    --text-font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --site-width: 90%;
+    --site-max-width: 1360px;
+    --main-bg-color: #181818;
+    --text-color: #fff;
+    --gray: #686868;
+    --dark-gray: #121212;
+    --white: #fff;
+    --main-font: 'Bellefair', serif;
+    --text-font: 'Barlow Regular', sans-serif;
+    --gutter: 1em;
+    --text-line-height: 1.2;
+    --text-font-size: 3.5vw;
   }
 }

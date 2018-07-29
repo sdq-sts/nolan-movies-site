@@ -41,8 +41,9 @@ export default {
   &__title {
     border-left: 1px solid var(--white);
     font-family: var(--main-font);
-    font-size: 2em;
+    font-size: calc(var(--text-font-size) * 2);
     padding-left: .25em;
+    letter-spacing: 1px;
 
     > p {
       transform: translateX(-100%) rotate(-90deg);
@@ -63,8 +64,38 @@ export default {
 
   &__item {
     font-family: var(--text-font);
-    width: 40%;
+    width: 50%;
     padding: .5em;
+    font-size: var(--text-font-size);
   }
+}
+
+// Media queries
+@media all and (max-width: 960px) {
+  .post-cast {
+    &__actors {
+      width: 60%;
+    }
+  }
+
+  // .actors-list {
+  //   &__item {
+  //     font-size: 1.5vw;
+  //   }
+  // }
+}
+
+@media all and (max-width: 768px) {
+  .post-cast {
+    &__actors {
+      width: 80%;
+    }
+  }
+
+  // .actors-list {
+  //   &__item {
+  //     font-size: 2vw;
+  //   }
+  // }
 }
 </style>

@@ -58,10 +58,10 @@ export default {
 
   &__line {
     height: 1px;
-    width: 30%;
+    width: 25%;
     background: var(--white);
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 .5em;
     transform: translateY(-.5em);
   }
 
@@ -70,7 +70,7 @@ export default {
     font-size: .8em;
     line-height: var(--text-line-height);
     color: var(--white);
-    width: 70%;
+    width: 55%;
     display: inline-block;
   }
 }
@@ -86,6 +86,22 @@ export default {
   .description {
     &__sentence {
       font-size: .7em;
+    }
+  }
+
+  .movie-page {
+    .links {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+
+      &__icon {
+        margin-top: 0;
+      }
+    }
+
+    .description {
+      display: none;
     }
   }
 }

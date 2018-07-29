@@ -28,6 +28,7 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
+    "imagesloaded": "^4.1.4",
     "jsdom": "^11.11.0",
     "node-sass": "^4.9.2",
     "nuxt-sass-resources-loader": "^2.0.2",

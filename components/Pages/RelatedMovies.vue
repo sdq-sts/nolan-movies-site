@@ -56,7 +56,7 @@ export default {
 
   &__title {
     font-family: var(--main-font);
-    font-size: 2em;
+    font-size: 2vw;
     font-weight: normal;
     position: absolute;
     transform: translateX(-100%) translateY(-1.75em) rotate(-90deg);
@@ -78,11 +78,40 @@ export default {
 .movie {
   &__title {
     font-family: var(--text-font);
-    font-size: 1.2em;
+    font-size: var(--text-font-size);
     letter-spacing: 1px;
     margin-top: calc(var(--gutter) / 4);
     text-align: center;
     cursor: pointer;
+  }
+}
+
+// Media queries
+@media all and (max-width: 960px) {
+  .related-movies {
+    &__title {
+      transform: translateX(-100%) translateY(-1.25em) rotate(-90deg);
+      padding-bottom: calc(var(--gutter) / 10);
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .related-movies {
+    &__title {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .related-movies {
+    flex-wrap: wrap;
+
+    &__movie {
+      width: calc(50% - #{var(--gutter) / 1.25});
+      margin-bottom: var(--gutter);
+    }
   }
 }
 </style>

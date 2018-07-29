@@ -3,7 +3,7 @@
     <div class="post-plot__first-section first-section">
       <div class="first-section__header section-header">
         <span class="section-header__line" aria-hidden="true"></span>
-        <h2 class="section-header__title">Enredo</h2>
+        <h2 class="section-header__title">{{ plotTitle }}</h2>
       </div>
 
       <div class="first-section__text">
@@ -26,8 +26,8 @@
     </div>
 
     <div class="post-plot__imdb imdb">
-      <span class="imdb__line"></span>
-      <a class="imdb__link" :href="imdbLink" target="_blank">Ver filme no IMDB</a>
+      <span class="imdb__line" aria-hidden="true"></span>
+      <a class="imdb__link" :href="imdbLink" target="_blank">{{ imdbLinkText }}</a>
     </div>
   </div>
 </template>
@@ -38,6 +38,11 @@ export default {
     plot: {
       type: String,
       required: true
+    },
+
+    plotTitle: {
+      type: String,
+      default: 'Enredo'
     },
 
     smallImageSrc: {
@@ -53,6 +58,11 @@ export default {
     imdbLink: {
       type: String,
       required: true
+    },
+
+    imdbLinkText: {
+      type: String,
+      default: 'Ver filme no IMDB'
     }
   },
 
@@ -93,7 +103,7 @@ export default {
   &__title {
     font-family: var(--main-font);
     font-weight: normal;
-    font-size: 3em;
+    font-size: calc(var(--text-font-size) * 3);
   }
 }
 
@@ -115,6 +125,7 @@ export default {
     text-align: justify;
 
     > p {
+      font-size: var(--text-font-size);
       margin-bottom: calc(var(--gutter) / 2);
     }
   }
@@ -138,6 +149,7 @@ export default {
     text-align: justify;
 
     > p {
+      font-size: var(--text-font-size);
       margin-bottom: calc(var(--gutter) / 2);
     }
   }
@@ -168,9 +180,31 @@ export default {
 
   &__link {
     font-family: var(--main-font);
-    font-size: 2.5em;
+    font-size: calc(var(--text-font-size) * 2);
     text-decoration: none;
     color: var(--white);
+  }
+}
+
+// Media queries
+@media all and (max-width: 768px) {
+  .first-section,
+  .second-section {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .section-header {
+    &__title {
+      font-size: calc(var(--text-font-size) * 2.5);
+    }
+  }
+
+  .imdb {
+    &__link {
+      font-size: calc(var(--text-font-size) * 1.5);
+    }
   }
 }
 </style>

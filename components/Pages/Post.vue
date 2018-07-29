@@ -68,6 +68,7 @@ export default {
   }
 
   &__about-movie,
+  &__cast,
   &__big-image,
   &__plot {
     margin-top: var(--gutter);

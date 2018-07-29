@@ -1,5 +1,5 @@
 <template>
-  <div class="site container">
+  <div class="site container" ref="siteContainer">
     <TheHeader
       class="site__header"
       :title="siteTitle"
@@ -8,7 +8,7 @@
 
     <div class="site__page page">
       <TheSocialIcons
-        class="page__social-icons"
+        :class="{ 'page__social-icons': true, 'movie-page': !isHomePage }"
         :description="siteDescription"
         :facebook="social.facebook"
         :instagram="social.instagram"
@@ -31,6 +31,7 @@
 import TheHeader from '~/components/Base/TheHeader'
 import TheSocialIcons from '~/components/Base/TheSocialIcons'
 import TheFooter from '~/components/Base/TheFooter'
+import imagesLoaded from 'imagesloaded'
 
 export default {
   computed: {
@@ -48,7 +49,17 @@ export default {
 
     social () {
       return this.$store.getters.socialLinks
+    },
+
+    isHomePage () {
+      return this.$nuxt.$route.path === '/'
     }
+  },
+
+  mounted () {
+    imagesLoaded(this.$refs.siteContainer, (instance) => {
+      console.log('AQUI NOS VAI')
+    })
   },
 
   components: {

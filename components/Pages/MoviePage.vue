@@ -1,0 +1,44 @@
+<template>
+  <div class="movie-page">
+    <Post :currentMovie="currentMovie"/>
+
+    <RelatedMovies
+      class="movie-page__related-movies"
+      :movieIndex="movieIndex"
+      :movieList="movieList"
+    />
+  </div>
+</template>
+
+<script>
+import Post from './Post'
+import RelatedMovies from './RelatedMovies'
+
+export default {
+  computed: {
+    movieList () {
+      return this.$store.getters.movies
+    },
+
+    currentMovie () {
+      return this.$store.getters.getMovie(this.movieIndex)
+    },
+
+    movieIndex () {
+      return  this.$store.getters.movies.findIndex(elm => elm.link === this.$nuxt.$route.path)
+    }
+  },
+
+  components: { Post, RelatedMovies }
+}
+</script>
+
+<style lang="scss">
+.movie-page {
+  &__related-movies {
+    width: var(--site-width);
+    max-width: var(--site-max-width);
+    margin: calc(var(--gutter) * 3) auto 0;
+  }
+}
+</style>

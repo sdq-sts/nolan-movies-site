@@ -72,22 +72,46 @@ export default {
 }
 
 .text-section {
+  font-size: var(--text-font-size);
+
   &__paragraph {
-    margin-bottom: 1.5em;
-    line-height: 1.2;
+    margin-bottom: calc(var(--gutter) / 2);
+    line-height: var(--text-line-height);
   }
 }
 
 .about-imgs {
   display: flex;
   justify-content: space-between;
-  margin-top: 3em;
+  align-items: flex-end;
+  margin-top: var(--gutter);
 
   &__img {
     width: calc(50% - 1em);
 
     > img {
       display: block;
+      width: 100%;
+    }
+  }
+}
+
+// Media queries
+
+@media all and (max-width: 768px) {
+  .about-text {
+    flex-wrap: wrap;
+
+    &__section {
+      width: 100%;
+    }
+  }
+
+  .about-imgs {
+    flex-wrap: wrap;
+
+    &__img {
+      margin-top: var(--gutter);
       width: 100%;
     }
   }

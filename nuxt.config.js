@@ -17,10 +17,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
+  loading: { color: '#FFE57B' },
 
   // Global CSS
   css: [
@@ -41,7 +38,9 @@ module.exports = {
       }
     }
   },
-
+  /*
+  ** Build configuration
+  */
   build: {
     /*
     ** Run ESLint on save
