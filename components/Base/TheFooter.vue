@@ -1,6 +1,6 @@
 <template>
   <footer class="site-footer">
-    <span class="site-footer__to-top to-top">
+    <span class="site-footer__to-top to-top" @click="scrollToTop">
       <span class="to-top__line" aria-hidden="true"></span>
       <span class="to-top__msg" aria-hidden="true">{{ toTopMsg }}</span>
     </span>
@@ -33,6 +33,12 @@ export default {
     fmtdFooterMsg () {
       return this.footerMsg.replace('.', '')
     }
+  },
+
+  methods: {
+    scrollToTop () {
+      window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+    }
   }
 }
 </script>
@@ -50,6 +56,7 @@ export default {
   display: flex;
   flex-direction: column;
   transform: rotate(-90deg) translateY(-1em);
+  cursor: pointer;
 
   &__line {
     width: 150%;
