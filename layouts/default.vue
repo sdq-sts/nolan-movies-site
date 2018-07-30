@@ -1,5 +1,7 @@
 <template>
   <div class="site container" ref="siteContainer">
+    <Loading ref="loading"/>
+
     <TheHeader
       class="site__header"
       :title="siteTitle"
@@ -32,6 +34,7 @@ import TheHeader from '~/components/Base/TheHeader'
 import TheSocialIcons from '~/components/Base/TheSocialIcons'
 import TheFooter from '~/components/Base/TheFooter'
 import imagesLoaded from 'imagesloaded'
+import Loading from '~/components/Base/Loading'
 
 export default {
   computed: {
@@ -58,14 +61,18 @@ export default {
 
   mounted () {
     imagesLoaded(this.$refs.siteContainer, (instance) => {
-      console.log('AQUI NOS VAI')
+      const htmlElement = document.querySelector('html')
+
+      this.$store.commit('SET_IS_LOADING', false)
+      htmlElement.style.position = 'relative'
     })
   },
 
   components: {
     TheHeader,
     TheSocialIcons,
-    TheFooter
+    TheFooter,
+    Loading
   }
 }
 </script>
@@ -74,12 +81,15 @@ export default {
 html {
   font-family: 'Barlow', sans-serif;
   overflow-y: scroll;
+  position: fixed;
+  width: 100%;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  transform: translate3d(0,0,0);
   box-sizing: border-box;
   background: var(--main-bg-color);
 }
