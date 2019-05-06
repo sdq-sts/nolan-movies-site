@@ -1,6 +1,6 @@
 <template>
   <div class="movie-page">
-    <Post :currentMovie="currentMovie"/>
+    <Post :currentMovie="movie"/>
 
     <RelatedMovies
       class="movie-page__related-movies"
@@ -15,21 +15,23 @@ import Post from './Post'
 import RelatedMovies from './RelatedMovies'
 
 export default {
+  components: { Post, RelatedMovies },
+
+  props: {
+    movie: {
+      type: Object
+    }
+  },
+
   computed: {
     movieList () {
       return this.$store.getters.movies
     },
 
-    currentMovie () {
-      return this.$store.getters.getMovie(this.movieIndex)
-    },
-
     movieIndex () {
       return  this.$store.getters.movies.findIndex(elm => elm.link === this.$nuxt.$route.path)
     }
-  },
-
-  components: { Post, RelatedMovies }
+  }
 }
 </script>
 

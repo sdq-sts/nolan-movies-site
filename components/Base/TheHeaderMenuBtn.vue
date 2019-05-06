@@ -1,14 +1,80 @@
 <template>
-  <span class="menu-icon">
-    <div class="menu-icon__first-line"></div>
-    <div class="menu-icon__second-line"></div>
-    <div class="menu-icon__third-line"></div>
+  <span
+    :class="{ 'menu-icon': true }"
+    ref="menu"
+    @click="handleMenuAnimations"
+  >
+    <transition :name="firstLineAnimation">
+      <span class="menu-icon__first-line animate__first-line" v-if="animateFirstLine"></span>
+    </transition>
+
+    <transition :name="secondLineAnimation">
+      <span class="menu-icon__second-line animate__first-line" v-if="animateSecondLine"></span>
+    </transition>
+
+    <transition :name="thirdLineAnimation">
+      <span class="menu-icon__third-line animate__first-line" v-if="animateThirdLine"></span>
+    </transition>
   </span>
 </template>
 
 <script>
 export default {
+  props: {
+    isMenuOpen: {
+      type: Boolean,
+      required: true
+    },
+    isLoading: {
+      type: Boolean,
+      required: true
+    }
+  },
 
+  data () {
+    return {
+      firstLineAnimation: 'grow',
+      secondLineAnimation: 'grow',
+      thirdLineAnimation: 'grow'
+    }
+  },
+
+  computed: {
+    animateFirstLine () {
+      if (!this.isLoading && this.isMenuOpen) {
+        this.setAnimationsForOpenMenu()
+        return true
+      }
+      return !this.isLoading
+    },
+
+    animateSecondLine () {
+      return !this.isLoading && this.isMenuOpen ? false : !this.isLoading
+    },
+
+    animateThirdLine () {
+      return !this.isLoading
+    }
+  },
+
+  methods: {
+    setAnimationsForOpenMenu () {
+      this.firstLineAnimation = 'rotate',
+      this.thirdLineAnimation = 'rotate'
+    },
+
+    setAnimationsforClosedMenu () {
+
+    },
+
+    afterLoading () {
+
+    },
+
+    handleMenuAnimations () {
+
+    }
+  }
 }
 </script>
 
@@ -17,7 +83,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
   width: 70px;
+  height: 25px;
   cursor: pointer;
 
   &__first-line,
@@ -29,13 +97,28 @@ export default {
   }
 
   &__second-line {
-    margin: .65em 0;
     width: 60%;
   }
 }
 
+// Transitions
+.grow-enter-active, .grow-leave-active {
+  transition: width .5s;
+}
+.grow-enter, .grow-leave-to {
+  width: 0;
+}
+
+.rotate-enter-active, .rotate-leave-active {
+  transform: rotate(45deg) .5s;
+}
+.rotate-enter, .rotate-leave-to {
+  transform: rotate(45deg) .5s;
+}
+
+
 // Media queries
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 580px) { 
   .menu-icon {
     width: 50px;
 

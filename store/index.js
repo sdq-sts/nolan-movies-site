@@ -5,6 +5,8 @@ const store = () => {
   return new Vuex.Store({
     state: {
       isLoading: true,
+      isMenuOpen: false,
+      siteMenu: Author.menu,
       siteTitle: Author.siteTitle,
       siteSubtitle: Author.siteSubtitle,
       siteDescription: Author.siteDescription,
@@ -17,6 +19,8 @@ const store = () => {
 
     getters: {
       isLoading: (state) => state.isLoading,
+      isMenuOpen: (state) => state.isMenuOpen,
+      siteMenu: (state) => state.siteMenu,
       siteTitle: (state) => state.siteTitle,
       siteSubtitle: (state) => state.siteSubtitle,
       siteDescription: (state) => state.siteDescription,
@@ -31,6 +35,9 @@ const store = () => {
     mutations: {
       SET_IS_LOADING: (state, bool) => {
         state.isLoading = bool
+      },
+      IS_MENU_OPEN: (state, bool) => {
+        state.isMenuOpen = bool
       }
     }
   })

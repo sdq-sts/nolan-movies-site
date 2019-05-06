@@ -13,13 +13,17 @@
         >{{ word }}<br/></span>
       </h1>
 
-      <MenuIcon class="header__menu-icon"/>
+      <TheHeaderMenu
+        class="header__menu"
+        :menuItems="menuItems"
+        :isLoading="isLoading"
+      />
     </header>
   </div>
 </template>
 
 <script>
-import MenuIcon from './TheHeaderMenuBtn'
+import TheHeaderMenu from './TheHeaderMenu'
 
 export default {
   props: {
@@ -28,7 +32,16 @@ export default {
       required: true
     },
     subtitle: {
-      type: Array
+      type: Array,
+      required: true
+    },
+    menuItems: {
+      type: Array,
+      required: true
+    },
+    isLoading: {
+      type: Boolean,
+      required: true
     }
   },
 
@@ -48,7 +61,7 @@ export default {
     }
   },
 
-  components: { MenuIcon }
+  components: { TheHeaderMenu }
 }
 </script>
 
@@ -89,7 +102,7 @@ export default {
     }
   }
 
-  &__menu-icon {
+  &__menu {
     position: absolute;
     z-index: 50;
     top: 0;

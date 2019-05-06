@@ -16,7 +16,7 @@
       </div>
 
       <div class="details__text bio-text">
-        <h3 class="bio-text__title">{{ authorName }}</h3>
+        <h3 class="bio-text__title" data-scroll>{{ authorName }}</h3>
         <div class="bio-text__text">
           <p v-for="(paragraph, i) in fmtdBio" :key="i">{{ paragraph }}</p>
         </div>
@@ -51,7 +51,7 @@ export default {
 
   computed: {
     fmtdBio () {
-      return this.bio.split('\n\n')
+      return (this.bio || []).split('\n\n')
     }
   }
 }
@@ -137,18 +137,28 @@ export default {
 
 .bio-text {
   &__title {
-    color: var(--white);
-    font-family: var(--main-font);
-    font-weight: normal;
     font-size: calc(var(--text-font-size) * 3.5);
+    font-family: var(--main-font);
+    color: var(--white);
+    font-weight: normal;
+
+    &.hidden-class {
+      transition: all 2s ease;
+      opacity: 0;
+    }
+
+    &.visible-class {
+      transition: all 2s ease;
+      opacity: 1;
+    }
   }
 
   &__text {
     font-family: var(--text-font);
-    color: var(--white);
     margin-left: calc(var(--gutter) * 3);
-    margin-top: var(--gutter);
     line-height: var(--text-line-height);
+    margin-top: var(--gutter);
+    color: var(--white);
     text-align: justify;
 
     > p {

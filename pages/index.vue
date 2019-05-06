@@ -1,6 +1,6 @@
 <template>
   <div class="page-container home">
-    <PostsGrid 
+    <PostsGrid
       class="home__posts-grid"
       :posts="movies"
     />
@@ -19,11 +19,7 @@ import PostsGrid from '~/components/Home/PostsGrid'
 import AuthorBio from '~/components/Home/AuthorBio'
 
 export default {
-  data () {
-    return {
-
-    }
-  },
+  components: { PostsGrid, AuthorBio },
 
   computed: {
     authorName () {
@@ -37,15 +33,23 @@ export default {
     authorImages () {
       return this.$store.getters.authorImages
     },
-    
+
     movies () {
       return this.$store.getters.movies
     }
   },
 
-  components: {
-    PostsGrid,
-    AuthorBio
+  head () {
+    return {
+      title: 'The dream is real.',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Uma pequena seleção dos meus filmes favoritos do Christopher Nolan.'
+        }
+      ]
+    }
   }
 }
 </script>

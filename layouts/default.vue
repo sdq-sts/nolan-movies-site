@@ -6,6 +6,8 @@
       class="site__header"
       :title="siteTitle"
       :subtitle="siteSubtitle"
+      :menuItems="menuItems"
+      :isLoading="isLoading"
     />
 
     <div class="site__page page">
@@ -30,11 +32,12 @@
 </template>
 
 <script>
+import ScrollTrigger from 'scrolltrigger-classes'
 import TheHeader from '~/components/Base/TheHeader'
 import TheSocialIcons from '~/components/Base/TheSocialIcons'
 import TheFooter from '~/components/Base/TheFooter'
-import imagesLoaded from 'imagesloaded'
 import Loading from '~/components/Base/Loading'
+import imagesLoaded from 'imagesloaded'
 
 export default {
   computed: {
@@ -50,16 +53,34 @@ export default {
       return this.$store.getters.siteDescription
     },
 
+    menuItems () {
+      return this.$store.getters.siteMenu
+    },
+
     social () {
       return this.$store.getters.socialLinks
     },
 
     isHomePage () {
       return this.$nuxt.$route.path === '/'
+    },
+
+    isLoading () {
+      return this.$store.getters.isLoading
     }
   },
 
   mounted () {
+    const trigger = new ScrollTrigger({
+      toggle: {
+        visible: 'visible-class',
+        hidden: 'hidden-class'
+      },
+      offset: { x: 0, y: 20 },
+      addHeight: true,
+      once: true
+    }, document.body, window)
+
     imagesLoaded(this.$refs.siteContainer, (instance) => {
       const htmlElement = document.querySelector('html')
 

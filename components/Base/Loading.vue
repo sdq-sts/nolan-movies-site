@@ -46,7 +46,7 @@ $spinner-offset: 15px;
 
   &--hide {
     animation-name: fade-out;
-    animation-duration: .5s;
+    animation-duration: var(--hide-loading-delay);
     animation-fill-mode: forwards;
   }
 }

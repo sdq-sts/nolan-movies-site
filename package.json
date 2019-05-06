@@ -5,7 +5,7 @@
   "author": "Sadraque <sdq.sts@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env HOST=0.0.0.0 PORT=3333 nuxt",
+    "dev": "cross-env NODE_ENV=development HOST=0.0.0.0 PORT=3000 nuxt",
     "test": "npm run test:unit -- npm run test:e2e",
     "test:unit": "TEST=unit ava ./test/specs/*.spec.js --verbose --serial",
     "test:e2e": "TEST=e2e ava ./test/e2e/*.spec.js --verbose",
@@ -16,7 +16,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.4.0"
+    "nuxt": "^1.4.2",
+    "scrolltrigger-classes": "^0.3.6"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.19",
@@ -30,12 +31,13 @@
     "eslint-plugin-vue": "^4.0.0",
     "imagesloaded": "^4.1.4",
     "jsdom": "^11.11.0",
-    "node-sass": "^4.9.2",
+    "node-sass": "^4.12.0",
     "nuxt-sass-resources-loader": "^2.0.2",
     "require-extension-hooks": "^0.3.2",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^1.0.1",
-    "sass-loader": "^7.0.3"
+    "sass-loader": "^7.0.3",
+    "vue-template-compiler": "^2.6.10"
   },
   "ava": {
     "require": [
