@@ -4,7 +4,7 @@
       class="site-menu__btn"
       :isMenuOpen="isMenuOpen"
       :isLoading="isLoading"
-      @click.native="handleMenu"
+      @click.native="handleMenuState"
     />
 
     <nav class="site-menu__navigation site-navigation" v-if="isMenuOpen">
@@ -37,19 +37,16 @@ export default {
     isLoading: {
       type: Boolean,
       required: true
-    }
-  },
-
-  computed: {
-    isMenuOpen () {
-      return this.$store.getters.isMenuOpen
+    },
+    isMenuOpen: {
+      type: Boolean,
+      required: true
     }
   },
 
   methods: {
-    handleMenu () {
-      const menuState = this.$store.getters.isMenuOpen
-      this.$store.commit('IS_MENU_OPEN', !menuState)
+    handleMenuState () {
+      this.$emit('handleMenuState')
     }
   },
 

@@ -4,8 +4,13 @@ import TheHeader from '../../components/Base/TheHeaderMenuBtn'
 
 let wrapper
 
+const propsData = {
+  isLoading: false,
+  isMenuOpen: false
+}
+
 test.beforeEach(() => {
-  wrapper = mount(TheHeader)
+  wrapper = mount(TheHeader, { propsData })
 })
 
 test('TheHeaderMenuBtn.vue to display', (t) => {

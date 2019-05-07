@@ -1,39 +1,45 @@
-# nolan-movies
+## Nolan Movies
 
-> Nuxt.js project
+[![Netlify Status](https://api.netlify.com/api/v1/badges/271b5bcc-f088-476d-b371-2d0b1e04b8f4/deploy-status)](https://app.netlify.com/sites/nolan-movies/deploys)
+![Works on my machine](https://img.shields.io/static/v1.svg?label=Funciona%20na%20minha%20m%C3%A1quina&message=%C2%AF%5C_(%E3%83%84)_%2F%C2%AF&color=yellow&style=flat-square)
 
-## Dev Setup
-Clone this repository:
+O site pode ser acessado online por [aqui](https://nolan-movies.netlify.com/)
+
+### Tecnologias
+
+O que foi usado no projeto:
+
+  - [Nuxt](https://nuxtjs.org/)
+  - [Vuex](https://vuex.vuejs.org/)
+
+### Como rodar em modo de desenvolvimento
 
 ```bash
-# clone and access the folder
-$ git clone git@github.com:sdq-sts/nolan-movies-site.git
+# clone o repositório e acesse a pasta
+$ git clone git@github.com:sdq-sts/nolan-movies-site.git && cd nolan-movies-site
 
-# access folder
-$ cd nolan-movies-site
-
-# install dependencies
+# instale as dependências
 $ npm install
 
-# run development mode
+# rode em modo de desenvolvimento
 $ npm run dev
 ```
 
-## Build Setup
+### Rodando alguns testes
+
+```bash
+$ npm run test
+```
+
+### Como gerar arquivos estáticos
 
 ``` bash
-# install dependencies
-$ npm install # Or yarn install
+# clone o repositório e acesse a pasta
+$ git clone git@github.com:sdq-sts/nolan-movies-site.git && cd nolan-movies-site
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# instale as dependências
+$ npm install
 
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
+# gere os arquivos estáticos
 $ npm run generate
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

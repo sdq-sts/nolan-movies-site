@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import imagesLoaded from 'imagesloaded'
 import ScrollTrigger from 'scrolltrigger-classes'
 import MoviePage from '@/components/Pages/MoviePage'
 

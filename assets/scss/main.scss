@@ -1,2 +1,14 @@
 @import 'variables';
 @import 'animations';
+
+::selection {
+  color: var(--dark-gray);
+  background: var(--yellow);
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

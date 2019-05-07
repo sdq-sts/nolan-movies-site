@@ -8,6 +8,8 @@
       :subtitle="siteSubtitle"
       :menuItems="menuItems"
       :isLoading="isLoading"
+      :isMenuOpen="isMenuOpen"
+      @handleMenuState="handleMenuState"
     />
 
     <div class="site__page page">
@@ -56,6 +58,10 @@ export default {
       return this.$store.getters.siteDescription
     },
 
+    isMenuOpen () {
+      return this.$store.getters.isMenuOpen
+    },
+
     menuItems () {
       return this.$store.getters.siteMenu
     },
@@ -70,6 +76,12 @@ export default {
 
     isLoading () {
       return this.$store.getters.isLoading
+    }
+  },
+
+  methods: {
+    handleMenuState (e) {
+      this.$store.commit('IS_MENU_OPEN', e)
     }
   },
 

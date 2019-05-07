@@ -4,6 +4,9 @@ module.exports = {
   */
   head: {
     title: 'nolan-movies',
+    htmlAttrs: {
+      lang: 'pt-BR',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'theme-color', content: '#181818' },

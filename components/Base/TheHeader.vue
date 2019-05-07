@@ -15,7 +15,9 @@
       <TheHeaderMenu
         class="header__menu"
         :menuItems="menuItems"
+        :isMenuOpen="isMenuOpen"
         :isLoading="isLoading"
+        @handleMenuState="handleMenuState"
       />
     </header>
   </div>
@@ -41,6 +43,10 @@ export default {
     isLoading: {
       type: Boolean,
       required: true
+    },
+    isMenuOpen: {
+      type: Boolean,
+      required: true
     }
   },
 
@@ -55,6 +61,9 @@ export default {
   },
 
   methods: {
+    handleMenuState () {
+      this.$emit('handleMenuState', !this.isMenuOpen)
+    },
     goToHomePage () {
       this.$router.push('/')
     }

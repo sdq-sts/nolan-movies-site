@@ -2,8 +2,8 @@
   <div class="post-plot">
     <div class="post-plot__first-section first-section">
       <div class="first-section__header section-header">
-        <span class="section-header__line" data-scroll aria-hidden="true"></span>
-        <h2 class="section-header__title" data-scroll>{{ plotTitle }}</h2>
+        <span class="section-header__line" aria-hidden="true" data-scroll="offset(0, 100px)"></span>
+        <h2 class="section-header__title" data-scroll="offset(0, 100px)">{{ plotTitle }}</h2>
       </div>
 
       <div class="first-section__text">
