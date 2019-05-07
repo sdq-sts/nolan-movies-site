@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import ScrollTrigger from 'scrolltrigger-classes'
 import PostsGrid from '~/components/Home/PostsGrid'
 import AuthorBio from '~/components/Home/AuthorBio'
 
@@ -37,6 +38,18 @@ export default {
     movies () {
       return this.$store.getters.movies
     }
+  },
+
+  mounted () {
+    const trigger = new ScrollTrigger({
+      toggle: {
+        visible: 'visible-class',
+        hidden: 'hidden-class'
+      },
+      offset: { x: 0, y: 20 },
+      addHeight: false,
+      once: false
+    }, document.body, window)
   },
 
   head () {

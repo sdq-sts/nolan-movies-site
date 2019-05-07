@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <div class="post-header__meta">
+    <div class="post-header__meta" data-scroll>
       <h3>({{ originalTitle }}, {{ year }})</h3>
     </div>
   </header>
@@ -49,6 +49,18 @@ export default {
       font-size: calc(var(--text-font-size) * 1.5);
       color: var(--gray);
       font-weight: normal;
+    }
+
+    &.hidden-class {
+      transition: all 0s ease-in-out;
+      transform: translateX(30px);
+      opacity: 0;
+    }
+
+    &.visible-class {
+      transition: all 1.5s ease-in-out;
+      transform: translateX(0px);
+      opacity: 1;
     }
   }
 }

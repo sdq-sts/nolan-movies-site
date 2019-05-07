@@ -37,7 +37,7 @@ export default {
 
   movies: [
     require('./movies/memento').default,
-    require('./movies/batman').default,
+    require('./movies/dark-knight').default,
     require('./movies/dunkirk').default,
     require('./movies/inception').default,
     require('./movies/interstellar').default

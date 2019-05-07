@@ -1,6 +1,6 @@
 <template>
   <div class="author-bio">
-    <h2 class="author-bio__title">{{ authorName }}</h2>
+    <h2 class="author-bio__title" data-scroll="offset(0, 200px)">{{ authorName }}</h2>
 
     <div class="author-bio__details details">
       <div class="details__gallery bio-gallery">
@@ -16,7 +16,7 @@
       </div>
 
       <div class="details__text bio-text">
-        <h3 class="bio-text__title" data-scroll>{{ authorName }}</h3>
+        <h3 class="bio-text__title">{{ authorName }}</h3>
         <div class="bio-text__text">
           <p v-for="(paragraph, i) in fmtdBio" :key="i">{{ paragraph }}</p>
         </div>
@@ -74,6 +74,18 @@ export default {
     user-select: none;
     z-index: -5;
     color: var(--dark-gray);
+
+    &.hidden-class {
+      transition: all 0s ease-in-out;
+      transform: translateX(50px);
+      opacity: 0;
+    }
+
+    &.visible-class {
+      transition: all 3s ease;
+      transform: translateX(0px);
+      opacity: 1;
+    }
   }
 
   img {
@@ -141,16 +153,6 @@ export default {
     font-family: var(--main-font);
     color: var(--white);
     font-weight: normal;
-
-    &.hidden-class {
-      transition: all 2s ease;
-      opacity: 0;
-    }
-
-    &.visible-class {
-      transition: all 2s ease;
-      opacity: 1;
-    }
   }
 
   &__text {

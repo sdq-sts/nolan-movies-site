@@ -4,7 +4,7 @@
       <img :src="post.thumb" :alt="post.title">
     </div>
 
-    <div class="grid-card__meta meta" @click="showPost">
+    <div :class="`grid-card__meta meta ${ oddOrEvenClass }`" @click="showPost" data-scroll>
       <h2 class="meta__title">{{ post.title }}</h2>
       <span class="meta__year">{{ post.year }}</span>
     </div>
@@ -22,6 +22,12 @@ export default {
     movieIndex: {
       type: Number,
       required: true
+    }
+  },
+
+  computed: {
+    oddOrEvenClass () {
+      return this.movieIndex % 2 === 0 ? 'even' : 'odd'
     }
   },
 
@@ -74,6 +80,30 @@ export default {
     font-size: .75em;
     padding-left: 3px;
     color: var(--gray);
+  }
+
+  &.odd.hidden-class {
+    transition: all .1s ease;
+    transform: translateX(-25px);
+    opacity: 0;
+  }
+
+  &.odd.visible-class {
+    transition: all 1s ease;
+    transform: translateX(0px);
+    opacity: 1;
+  }
+
+  &.even.hidden-class {
+    transition: all .1s ease;
+    transform: translateX(25px);
+    opacity: 0;
+  }
+
+  &.even.visible-class {
+    transition: all 1s ease;
+    transform: translateX(0px);
+    opacity: 1;
   }
 }
 

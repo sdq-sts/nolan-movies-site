@@ -1,12 +1,26 @@
 <template>
-  <MoviePage :movie="$store.getters.getMovie(3)"/>
+  <MoviePage ref="pageContainer" :movie="$store.getters.getMovie(3)"/>
 </template>
 
 <script>
+import imagesLoaded from 'imagesloaded'
+import ScrollTrigger from 'scrolltrigger-classes'
 import MoviePage from '@/components/Pages/MoviePage'
 
 export default {
   components: { MoviePage },
+
+  mounted () {
+    const trigger = new ScrollTrigger({
+      toggle: {
+        visible: 'visible-class',
+        hidden: 'hidden-class'
+      },
+      offset: { x: 0, y: 20 },
+      addHeight: false,
+      once: false
+    }, document.body, window)
+  },
 
   head () {
     return {

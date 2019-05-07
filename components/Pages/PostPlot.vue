@@ -2,8 +2,8 @@
   <div class="post-plot">
     <div class="post-plot__first-section first-section">
       <div class="first-section__header section-header">
-        <span class="section-header__line" aria-hidden="true"></span>
-        <h2 class="section-header__title">{{ plotTitle }}</h2>
+        <span class="section-header__line" data-scroll aria-hidden="true"></span>
+        <h2 class="section-header__title" data-scroll>{{ plotTitle }}</h2>
       </div>
 
       <div class="first-section__text">
@@ -98,12 +98,35 @@ export default {
     width: 100px;
     margin-right: calc(var(--gutter) / 2);
     background: var(--white);
+
+    &.hidden-class {
+      transition: all 0s ease-in-out;
+      width: 0;
+    }
+
+    &.visible-class {
+      transition: all .5s ease;
+      width: 100px;
+    }
   }
 
   &__title {
     font-family: var(--main-font);
     font-weight: normal;
     font-size: calc(var(--text-font-size) * 3);
+
+    &.hidden-class {
+      transition: all 0s ease-in-out;
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+
+    &.visible-class {
+      transition: all .5s ease-in-out;
+      transition-delay: .15s;
+      transform: translateX(0px);
+      opacity: 1;
+    }
   }
 }
 

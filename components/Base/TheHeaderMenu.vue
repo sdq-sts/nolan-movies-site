@@ -107,4 +107,10 @@ export default {
     margin-bottom: 0;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .site-menu {
+    display: none;
+  }
+}
 </style>

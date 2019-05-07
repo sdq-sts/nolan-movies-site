@@ -5,11 +5,10 @@
     </h2>
 
     <header class="header">
-      <h1 class="header__title" >
+      <h1 class="header__title" @click="goToHomePage">
         <span
           v-for="(word, i) in theTitle"
           :key="i"
-          @click="goToHomePage"
         >{{ word }}<br/></span>
       </h1>
 

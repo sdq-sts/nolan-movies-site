@@ -5,7 +5,7 @@
       :title="currentMovie.title"
       :originalTitle="currentMovie.originalTitle"
       :year="currentMovie.year"
-      :image="((currentMovie || {}).images || {}).postHeader"
+      :image="currentMovie.images.postHeader"
     />
 
     <PostCast
@@ -16,7 +16,7 @@
     <div class="post__big-image big-image">
       <img
         class="big-image__img"
-        :src="((currentMovie || {}).images || {}).postBigImage"
+        :src="currentMovie.images.postBigImage"
         :alt="currentMovie.title"
       />
     </div>
@@ -24,15 +24,15 @@
     <PostAbout
       class="post__about-movie"
       :text="currentMovie.about"
-      :firstImage="((currentMovie || {}).images || {}).firstAboutImage"
-      :secondImage="((currentMovie || {}).images || {}).secondAboutImage"
+      :firstImage="currentMovie.images.firstAboutImage"
+      :secondImage="currentMovie.images.secondAboutImage"
     />
 
     <PostPlot
       class="post__plot"
       :plot="currentMovie.plot"
-      :smallImageSrc="((currentMovie || {}).images || {}).plotSmallImg"
-      :bigImageSrc="((currentMovie || {}).images || {}).plotBigImg"
+      :smallImageSrc="currentMovie.images.plotSmallImg"
+      :bigImageSrc="currentMovie.images.plotBigImg"
       :imdbLink="currentMovie.imdbLink"
     />
   </article>

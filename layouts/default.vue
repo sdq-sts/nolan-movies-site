@@ -20,7 +20,10 @@
         :pinterest="social.pinterest"
         :email="social.email"
       />
-      <nuxt/>
+
+      <transition name="fade">
+        <nuxt/>
+      </transition>
     </div>
 
     <TheFooter
@@ -71,16 +74,6 @@ export default {
   },
 
   mounted () {
-    const trigger = new ScrollTrigger({
-      toggle: {
-        visible: 'visible-class',
-        hidden: 'hidden-class'
-      },
-      offset: { x: 0, y: 20 },
-      addHeight: true,
-      once: true
-    }, document.body, window)
-
     imagesLoaded(this.$refs.siteContainer, (instance) => {
       const htmlElement = document.querySelector('html')
 

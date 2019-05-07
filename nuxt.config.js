@@ -6,18 +6,25 @@ module.exports = {
     title: 'nolan-movies',
     meta: [
       { charset: 'utf-8' },
+      { name: 'theme-color', content: '#181818' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.1.0/css/all.css' }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
+
+  //Customize the progress bar color
   loading: { color: '#FFE57B' },
+
+  // Router
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
+  },
 
   // Global CSS
   css: [
