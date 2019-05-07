@@ -1,7 +1,7 @@
 ## Nolan Movies
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/271b5bcc-f088-476d-b371-2d0b1e04b8f4/deploy-status)](https://app.netlify.com/sites/nolan-movies/deploys)
-![Works on my machine](https://img.shields.io/static/v1.svg?label=Funciona%20na%20minha%20m%C3%A1quina&message=%C2%AF%5C_(%E3%83%84)_%2F%C2%AF&color=yellow&style=flat-square)
+[![Works on my machine](https://img.shields.io/static/v1.svg?label=Funciona%20na%20minha%20m%C3%A1quina&message=%C2%AF%5C_(%E3%83%84)_%2F%C2%AF&color=yellow&style=flat-square)](https://github.com/sdq-sts/)
 
 O site pode ser acessado online por [aqui](https://nolan-movies.netlify.com/)
 
