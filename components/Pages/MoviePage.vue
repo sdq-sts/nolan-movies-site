@@ -5,7 +5,7 @@
     <RelatedMovies
       class="movie-page__related-movies"
       :movieIndex="movieIndex"
-      :movieList="movieList"
+      :movies="movies"
     />
   </div>
 </template>
@@ -18,18 +18,20 @@ export default {
   components: { Post, RelatedMovies },
 
   props: {
+    movieList: {
+      type: Array
+    },
     movie: {
       type: Object
     }
   },
 
   computed: {
-    movieList () {
-      return this.$store.getters.movies
-    },
-
     movieIndex () {
       return  this.$store.getters.movies.findIndex(elm => elm.link === this.$nuxt.$route.path)
+    },
+    movies () {
+      return this.movieList.filter((m, i) => i !== this.movieIndex)
     }
   }
 }

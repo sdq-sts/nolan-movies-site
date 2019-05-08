@@ -1,5 +1,6 @@
 <template>
   <div class="related-movies">
+    {{ movies.length }}
     <h3 class="related-movies__title">{{ componentTitle }}</h3>
     <div
       class="related-movies__movie movie"
@@ -21,21 +22,9 @@ export default {
       type: String,
       default: 'Veja Também'
     },
-
-    movieIndex: {
-      type: Number,
-      required: true
-    },
-
-    movieList: {
+    movies: {
       type: Array,
       required: true
-    }
-  },
-
-  computed: {
-    movies () {
-      return this.movieList.filter((m, i) => i !== this.movieIndex)
     }
   },
 

@@ -1,5 +1,8 @@
 <template>
-  <MoviePage :movie="$store.getters.getMovie(4)"/>
+  <MoviePage
+    :movieList="movieList"
+    :movie="$store.getters.getMovie(4)"
+  />
 </template>
 
 <script>
@@ -8,6 +11,12 @@ import MoviePage from '@/components/Pages/MoviePage'
 
 export default {
   components: { MoviePage },
+
+  computed: {
+    movieList () {
+      return this.$store.getters.movies
+    }
+  },
 
   mounted () {
     const trigger = new ScrollTrigger({
