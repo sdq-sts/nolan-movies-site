@@ -1,19 +1,19 @@
 <template>
   <span
-    :class="{ 'menu-icon': true }"
+    class="menu-icon"
     ref="menu"
     @click="handleMenuAnimations"
   >
     <transition :name="firstLineAnimation">
-      <span class="menu-icon__first-line animate__first-line" v-if="animateFirstLine"></span>
+      <span class="menu-icon__first-line animate__first-line" v-if="animateFirstLine && animateMenuBtn"></span>
     </transition>
 
     <transition :name="secondLineAnimation">
-      <span class="menu-icon__second-line animate__first-line" v-if="animateSecondLine"></span>
+      <span class="menu-icon__second-line animate__first-line" v-if="animateSecondLine && animateMenuBtn"></span>
     </transition>
 
     <transition :name="thirdLineAnimation">
-      <span class="menu-icon__third-line animate__first-line" v-if="animateThirdLine"></span>
+      <span class="menu-icon__third-line animate__first-line" v-if="animateThirdLine && animateMenuBtn"></span>
     </transition>
   </span>
 </template>
@@ -28,6 +28,10 @@ export default {
     isLoading: {
       type: Boolean,
       required: true
+    },
+    animateMenuBtn: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -118,7 +122,7 @@ export default {
 
 
 // Media queries
-@media screen and (max-width: 580px) { 
+@media screen and (max-width: 580px) {
   .menu-icon {
     width: 50px;
 

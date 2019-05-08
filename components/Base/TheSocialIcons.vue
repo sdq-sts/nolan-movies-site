@@ -44,10 +44,11 @@ export default {
   &__icon {
     color: var(--white);
     margin-top: 1.5em;
+    font-size: .9em;
 
     &:first-child {
       margin-top: 0;
-    } 
+    }
   }
 }
 

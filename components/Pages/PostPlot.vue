@@ -105,7 +105,7 @@ export default {
     }
 
     &.visible-class {
-      transition: all .5s ease;
+      transition: all .75s ease;
       width: 100px;
     }
   }
@@ -122,7 +122,7 @@ export default {
     }
 
     &.visible-class {
-      transition: all .5s ease-in-out;
+      transition: all .9s ease-in-out;
       transition-delay: .15s;
       transform: translateX(0px);
       opacity: 1;

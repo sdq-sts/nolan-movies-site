@@ -25,12 +25,6 @@ $ npm install
 $ npm run dev
 ```
 
-### Rodando alguns testes
-
-```bash
-$ npm run test
-```
-
 ### Como gerar arquivos estáticos
 
 ``` bash
@@ -43,3 +37,10 @@ $ npm install
 # gere os arquivos estáticos
 $ npm run generate
 ```
+
+### Rodando alguns testes
+
+```bash
+$ npm run test
+```
+

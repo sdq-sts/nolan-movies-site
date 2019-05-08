@@ -1,15 +1,23 @@
 <template>
   <div class="site-header">
-    <h2 class="site-header__subtitle">
-      <span v-for="(word, i) in theSubtitle" :key="i">{{ word }}<br/></span>
+    <h2 class="site-header__subtitle subtitle">
+      <span
+        v-for="(word, i) in theSubtitle"
+        :key="i"
+        :class="{ 'subtitle__line': true , 'show': !isLoading }"
+        :style="{ 'transition-delay': `${(i * 0.01) * 30}s` }"
+      >{{ word }}<br/></span>
     </h2>
 
     <header class="header">
-      <h1 class="header__title" @click="goToHomePage">
+      <h1 class="header__title title" @click="goToHomePage">
         <span
           v-for="(word, i) in theTitle"
           :key="i"
-        >{{ word }}<br/></span>
+          :class="{ 'title__line': true , 'show': !isLoading }"
+          :style="{ 'transition-delay': `${(i * 0.01) * 30}s` }"
+          v-on="{ transitionend: handleTransitionEnd(i) }"
+        ><a @click="goToHomePage">{{ word }}</a><br/></span>
       </h1>
 
       <TheHeaderMenu
@@ -17,6 +25,7 @@
         :menuItems="menuItems"
         :isMenuOpen="isMenuOpen"
         :isLoading="isLoading"
+        :animateMenu="animateMenu"
         @handleMenuState="handleMenuState"
       />
     </header>
@@ -27,6 +36,8 @@
 import TheHeaderMenu from './TheHeaderMenu'
 
 export default {
+  components: { TheHeaderMenu },
+
   props: {
     title: {
       type: Array,
@@ -50,6 +61,10 @@ export default {
     }
   },
 
+  data: () => ({
+    animateMenu: false
+  }),
+
   computed: {
     theTitle () {
       return this.title
@@ -66,10 +81,16 @@ export default {
     },
     goToHomePage () {
       this.$router.push('/')
+    },
+    handleTransitionEnd (i) {
+      return i === (this.theTitle.length - 1)
+        ? this.listenTransitionEnd
+        : () => {}
+    },
+    listenTransitionEnd () {
+      this.animateMenu = true
     }
-  },
-
-  components: { TheHeaderMenu }
+  }
 }
 </script>
 
@@ -105,7 +126,7 @@ export default {
     z-index: 50;
     margin: 0;
 
-    > span {
+    a {
       cursor: pointer;
     }
   }
@@ -117,6 +138,38 @@ export default {
     right: 0;
   }
 }
+
+.title {
+  &__line {
+    display: block;
+    transition: all 0s ease-in-out;
+    transform: translateY(20px);
+    opacity: 0;
+
+    &.show {
+      transition: all 1s ease-in-out;
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+}
+
+.subtitle {
+  &__line {
+    display: block;
+    transition: all 0s ease-in-out;
+    transform: translateX(80px);
+    opacity: 0;
+
+    &.show {
+      transition: all 1s ease-in-out;
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+}
+
+
 
 // Media queries
 @media screen and (max-width: 960px) {

@@ -4,15 +4,18 @@
       class="site-menu__btn"
       :isMenuOpen="isMenuOpen"
       :isLoading="isLoading"
+      :animateMenuBtn="animateMenu"
       @click.native="handleMenuState"
     />
 
-    <nav class="site-menu__navigation site-navigation" v-if="isMenuOpen">
-      <ul class="site-navigation__list navigation-list">
+    <nav class="site-menu__navigation site-navigation" >
+      <transition-group  name="list" class="site-navigation__list navigation-list" tag="ul">
         <li
-          class="navigation-list__item list-item"
+          v-show="isMenuOpen"
+          :class="{ 'navigation-list__item': true, 'list-item': true, 'show': isMenuOpen, 'hide': !isMenuOpen }"
+          :style="{ 'transition-delay': `${i * 0.1}s` }"
           v-for="(item, i) in menuItems"
-          :key="i">
+          :key="`${item.name + i}`">
           <a
             class="list-item__link"
             :href="item.link"
@@ -20,7 +23,7 @@
           </a>
           <span class="list-item__line"></span>
         </li>
-      </ul>
+      </transition-group>
     </nav>
   </div>
 </template>
@@ -41,6 +44,10 @@ export default {
     isMenuOpen: {
       type: Boolean,
       required: true
+    },
+    animateMenu: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -86,6 +93,14 @@ export default {
   margin-top: calc(var(--gutter) / 2);
   margin-bottom: calc(var(--gutter) / 2);
 
+  &.show {
+    display: flex;
+  }
+
+  &.hide {
+    display: none;
+  }
+
   &__link {
     text-decoration: none;
     color: var(--white);
@@ -103,6 +118,15 @@ export default {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.list-enter-active, .list-leave-active {
+  transition: all .5s;
+  opacity: 1;
+}
+.list-enter, .list-leave-to /* .list-leave-active em versões anteriores a 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(10px);
 }
 
 @media screen and (max-width: 480px) {
