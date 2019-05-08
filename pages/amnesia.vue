@@ -1,7 +1,8 @@
 <template>
   <MoviePage
     :movieList="movieList"
-    :movie="$store.getters.getMovie(0)"
+    :movie="getMovie(movieIndex)"
+    :movieIndex="movieIndex"
   />
 </template>
 
@@ -12,9 +13,16 @@ import MoviePage from '@/components/Pages/MoviePage'
 export default {
   components: { MoviePage },
 
+  data: () => ({
+    movieIndex: 0
+  }),
+
   computed: {
     movieList () {
       return this.$store.getters.movies
+    },
+    getMovie () {
+      return this.$store.getters.getMovie
     }
   },
 

@@ -21,15 +21,18 @@ export default {
     movieList: {
       type: Array
     },
+    movieIndex: {
+      type: Number
+    },
     movie: {
       type: Object
     }
   },
 
   computed: {
-    movieIndex () {
-      return  this.$store.getters.movies.findIndex(elm => elm.link === this.$nuxt.$route.path)
-    },
+    // movieIndex () {
+    //   return  this.$store.getters.movies.findIndex(elm => elm.link === this.$nuxt.$route.path)
+    // },
     movies () {
       return this.movieList.filter((m, i) => i !== this.movieIndex)
     }

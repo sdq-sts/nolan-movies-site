@@ -1,6 +1,5 @@
 <template>
   <div class="related-movies">
-    {{ movies.length }}
     <h3 class="related-movies__title">{{ componentTitle }}</h3>
     <div
       class="related-movies__movie movie"
