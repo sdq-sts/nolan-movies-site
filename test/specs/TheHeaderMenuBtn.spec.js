@@ -18,11 +18,6 @@ test('TheHeaderMenuBtn.vue to display', (t) => {
   t.is(menuIcon.length, 1)
 })
 
-test('TheHeaderMenuBtn.vue to have 3 childrens', (t) => {
-  const elLength = wrapper.vm.$el.children.length
-  t.is(elLength, 3)
-})
-
 test.afterEach(() => {
   wrapper = null
 })

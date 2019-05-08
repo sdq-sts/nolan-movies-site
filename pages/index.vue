@@ -47,7 +47,7 @@ export default {
         hidden: 'hidden-class'
       },
       offset: { x: 0, y: 20 },
-      addHeight: true,
+      addHeight: false,
       once: false
     }, document.body, window)
   },

@@ -5,17 +5,17 @@
         v-for="(word, i) in theSubtitle"
         :key="i"
         :class="{ 'subtitle__line': true , 'show': !isLoading }"
-        :style="{ 'transition-delay': `${(i * 0.01) * 30}s` }"
+        :style="customStyle(i)"
       >{{ word }}<br/></span>
     </h2>
 
     <header class="header">
-      <h1 class="header__title title" @click="goToHomePage">
+      <h1 class="header__title title">
         <span
           v-for="(word, i) in theTitle"
           :key="i"
           :class="{ 'title__line': true , 'show': !isLoading }"
-          :style="{ 'transition-delay': `${(i * 0.01) * 30}s` }"
+          :style="customStyle(i)"
           v-on="{ transitionend: handleTransitionEnd(i) }"
         ><a @click="goToHomePage">{{ word }}</a><br/></span>
       </h1>
@@ -69,10 +69,10 @@ export default {
     theTitle () {
       return this.title
     },
-
     theSubtitle () {
       return this.subtitle ? this.subtitle : this.title
-    }
+    },
+
   },
 
   methods: {
@@ -86,6 +86,9 @@ export default {
       return i === (this.theTitle.length - 1)
         ? this.listenTransitionEnd
         : () => {}
+    },
+    customStyle (i) {
+      return { 'transition-delay': `${(i * 0.01) * 30}s` }
     },
     listenTransitionEnd () {
       this.animateMenu = true
@@ -168,8 +171,6 @@ export default {
     }
   }
 }
-
-
 
 // Media queries
 @media screen and (max-width: 960px) {
